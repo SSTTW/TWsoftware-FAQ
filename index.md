@@ -1,3 +1,9 @@
+---
+layout: default
+title: MOTW PROFIS Engineering FAQ
+description: 喜立德工程軟體技術支援中心 - 常見問題與解決方案
+---
+
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
 歡迎使用 PROFIS Engineering 技術問答集。本頁面旨在協助工程師快速掌握軟體操作、法規更新及設計邏輯。
