@@ -1,18 +1,46 @@
 ---
 layout: default
 title: MOTW PROFIS Engineering FAQ
-description: 喜立德工程軟體技術支援中心 - 常見問題與解決方案
 ---
 
 <style>
-  /* 徹底隱藏 GitHub Pages 預設頁尾 */
+  /* 全域簡約風：白底黑字 */
+  body {
+    color: #333;
+    background-color: #ffffff;
+    line-height: 1.6;
+  }
+
+  /* 標題與重點色：深紅色 (#D21F3C 是接近 Hilti 的紅) */
+  h1, h2, h3 {
+    color: #D21F3C;
+    border-bottom: 2px solid #D21F3C; /* 加上深紅色下輪廓線 */
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  /* 連結顏色 */
+  a {
+    color: #D21F3C;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* 區隔線樣式 */
+  hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+  }
+
+  /* 隱藏官方頁尾 */
   .site-footer {
     display: none !important;
   }
-  footer {
-    display: none !important;
-  }
 </style>
+
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
