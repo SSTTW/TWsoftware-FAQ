@@ -3,11 +3,16 @@ layout: default
 title: MOTW PROFIS Engineering FAQ
 description: 喜立德工程軟體技術支援中心 - 常見問題與解決方案
 ---
----
-layout: default
-title: MOTW PROFIS Engineering FAQ
----
 
+<style>
+  /* 徹底隱藏 GitHub Pages 預設頁尾 */
+  .site-footer {
+    display: none !important;
+  }
+  footer {
+    display: none !important;
+  }
+</style>
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
@@ -135,9 +140,6 @@ title: MOTW PROFIS Engineering FAQ
 | **ETAG-001 技術規範** | 🇪🇺 歐洲 | [點此下載](./ETAG-001-annex-c.pdf) |
 
 ---
-© 2026 MOTW PROFIS Engineering Support.
-
----
 
 ## 🙋‍♂️ 找不到您的問題？
 如果您在上方 FAQ 中沒有找到答案，請點擊下方按鈕提交您的問題。
@@ -145,18 +147,18 @@ title: MOTW PROFIS Engineering FAQ
 [<img src="https://img.shields.io/badge/💬_點我提問-私密諮詢表單-red?style=for-the-badge&logo=googleforms&logoColor=white">](你的表單連結)
 
 > [!TIP]
-> **私密性說明：** > 透過此表單提交的問題僅會傳送至技術後台，**其他使用者無法看見您的提問內容**，確保您的設計專案資訊安全。
+> **私密性說明：** 透過此表單提交的問題僅會傳送至技術後台，**其他使用者無法看見您的提問內容**，確保您的設計專案資訊安全。
 
 ---
+
 <p align="center">
+  <a href="#📌-快速跳轉索引"><b>[↑ 回到頂部]</b></a><br><br>
   <b>MOTW PROFIS Engineering 技術支援小組</b><br>
   最後更新日期：2026年4月
 </p>
 
-[↑ 回到頂部](#-快速跳轉索引)
----
+<hr>
 <p align="center">
-  <hr>
   <font color="#808080" size="2">
     © 2026 Hilti Engineering Support Team | 僅供技術交流參考，設計請依最終報告為準<br>
     本頁面內容由 <b>MOTW 技術組</b> 維護與更新
