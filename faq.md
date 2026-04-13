@@ -311,7 +311,7 @@ CBFEM 將混凝土視為<b>受壓彈簧</b>，錨栓視為<b>受拉彈簧</b>。
 ## 🙋‍♂️ 找不到您的問題？
 如果您在上方 FAQ 中沒有找到答案，請點擊下方按鈕提交您的問題。
 
-[<img src="https://img.shields.io/badge/💬_點我提問-私密諮詢表單-red?style=for-the-badge&logo=googleforms&logoColor=white">](https://github.com/SSTTW/software-awesome-SSTFAQ.git)
+[<img src="https://img.shields.io/badge/💬_點我提問-私密諮詢表單-red?style=for-the-badge&logo=googleforms&logoColor=white">](https://forms.office.com/e/PngwicwAn8)
 
 <p align="center">
   <a href="#📌-快速跳轉索引"><b>[↑ 回到頂部]</b></a><br><br>
