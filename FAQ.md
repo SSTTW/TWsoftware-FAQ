@@ -126,5 +126,18 @@
 ---
 © 2026 MOTW PROFIS Engineering Support.
 
-## 🙋‍♂️ 還有其他問題？
-[💬 點我提交私密諮詢表單](https://github.com/SSTTW/software-awesome-SSTFAQ.git)
+---
+
+## 🙋‍♂️ 找不到您的問題？
+如果您在上方 FAQ 中沒有找到答案，請點擊下方按鈕提交您的問題。
+
+[<img src="https://img.shields.io/badge/💬_點我提問-私密諮詢表單-red?style=for-the-badge&logo=googleforms&logoColor=white">](你的表單連結)
+
+> [!TIP]
+> **私密性說明：** > 透過此表單提交的問題僅會傳送至技術後台，**其他使用者無法看見您的提問內容**，確保您的設計專案資訊安全。
+
+---
+<p align="center">
+  <b>MOTW PROFIS Engineering 技術支援小組</b><br>
+  最後更新日期：2026年4月
+</p>
