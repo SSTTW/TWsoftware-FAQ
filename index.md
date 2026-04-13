@@ -1,46 +1,59 @@
 ---
 layout: default
 title: MOTW PROFIS Engineering FAQ
+description: 喜立德工程軟體技術支援中心 - 常見問題與解決方案
 ---
 
 <style>
-  /* 全域簡約風：白底黑字 */
+  /* 1. 全域風格調整：優化閱讀質感 */
   body {
     color: #333;
     background-color: #ffffff;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   }
 
-  /* 標題與重點色：深紅色 (#D21F3C 是接近 Hilti 的紅) */
+  /* 2. 標題與重點色：使用喜立德紅 (#D21F3C) */
+  /* 增加 !important 確保覆蓋主題預設樣式 */
   h1, h2, h3 {
-    color: #D21F3C;
-    border-bottom: 2px solid #D21F3C; /* 加上深紅色下輪廓線 */
-    padding-bottom: 10px;
-    margin-top: 40px;
+    color: #D21F3C !important;
+    border-bottom: 2px solid #D21F3C !important;
+    padding-bottom: 12px !important;
+    margin-top: 50px !important;
+    font-weight: bold !important;
   }
 
-  /* 連結顏色 */
+  /* 3. 連結顏色與交互 */
   a {
-    color: #D21F3C;
+    color: #D21F3C !important;
     text-decoration: none;
+    transition: 0.3s;
   }
   a:hover {
+    color: #A3182E !important;
     text-decoration: underline;
   }
 
-  /* 區隔線樣式 */
-  hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 40px 0;
+  /* 4. 引用區塊 (Notes) 的優化 */
+  blockquote {
+    border-left: 5px solid #D21F3C !important;
+    background-color: #fdf2f3;
+    padding: 15px !important;
+    color: #555;
   }
 
-  /* 隱藏官方頁尾 */
-  .site-footer {
+  /* 5. 隱藏預設頁尾標記 */
+  .site-footer, footer {
     display: none !important;
   }
-</style>
 
+  /* 6. 圖片陰影與圓角 (增加網頁精緻感) */
+  img {
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 10px 0;
+  }
+</style>
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
@@ -52,10 +65,10 @@ title: MOTW PROFIS Engineering FAQ
 ---
 
 ## 📌 快速跳轉索引
-* [軟體操作與功能設定](#軟體操作與功能設定)
-* [法規與認證相關](#法規與認證相關)
-* [結構設計與力學分析](#結構設計與力學分析)
-* [預埋槽 (Anchor Channel) 專區](#預埋槽專區)
+* [🛠️ 軟體操作與功能設定](#軟體操作與功能設定)
+* [⚖️ 法規與認證相關](#法規與認證相關)
+* [📐 結構設計與力學分析](#結構設計與力學分析)
+* [🏗️ 預埋槽 (Anchor Channel) 專區](#預埋槽專區)
 * [📚 參考法規下載](#參考法規下載)
 
 ---
@@ -91,12 +104,6 @@ title: MOTW PROFIS Engineering FAQ
 
 ---
 
-### Q: 建好模型後如何更改檔名？
-**A:** 點選螢幕上方檔名旁邊的 **「設定」** 圖示即可編輯。
-![更改檔名](./images/image%209.png)
-
----
-
 ## <a name="法規與認證相關"></a> ⚖️ 法規與認證相關
 
 ### Q: 112 年版 RC 規範 17.5.3 錨栓強度折減因數在哪調整？
@@ -106,11 +113,6 @@ title: MOTW PROFIS Engineering FAQ
 
 ### Q: 如何確認錨栓具備抗震能力 (C1/C2)？
 **A:** 請查閱產品的 **ICC-ESR 或 EOTA 報告**。報告中會註明是否通過循環載荷試驗，並標示其在開裂混凝土中的抗震表現。
-
----
-
-### Q: 台灣沒有錨栓允收標準怎麼辦？
-**A:** 台灣 CNS 有測試方法但無允收標準。建議參考美國 **ICC-ESR (AC308)** 或歐洲 **ETA (ETAG/EAD)** 認證。Hilti 產品 100% 符合歐洲或美國規範。
 
 ---
 
@@ -130,28 +132,7 @@ title: MOTW PROFIS Engineering FAQ
 
 ---
 
-### Q: 邊緣加固鋼筋尺寸如何選擇？
-**A:** 規範 (401-112 17.7.2.5.1) 預設為 4 號鋼筋。若現場使用大於 4 號的鋼筋，其反力更高，使用軟體的 4 號設定是最保守安全的算法。
-
----
-
-### Q: 懸臂裡面的「旋轉約束」α 係數如何選？
-**A:** * α = 1：無約束
-* α = 2：完全約束
-可參考 ETAG 4.2.2.4 規範說明。
-![旋轉約束](./images/image%202.png)
-
----
-
 ## <a name="預埋槽專區"></a> 🏗️ 預埋槽 (Anchor Channel) 專區
-
-### Q: 預埋槽 (HAC) 除了幕牆 (Façade) 還有哪些應用？
-**A:** 1. **電梯設備**：導軌與支撐固定。
-2. **管線安裝**：水管、通風管、電纜橋架。
-3. **混凝土結構**：樓板或梁柱預留安裝點。
-4. **設備固定**：大型機組或機械支架。
-
----
 
 ### Q: 槽式預埋件如何辨識耐震需求 (17.10)？
 **A:** 軟體介面會根據選擇的荷載類型自動判別是否觸發抗震檢核。
