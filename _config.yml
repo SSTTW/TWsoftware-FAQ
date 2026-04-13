@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+theme: minima
+title: MOTW PROFIS Engineering FAQ
+header_pages:
+  - index.md
+
+# 自定義簡約風格設定
+minima:
+  skin: classic # 使用經典白底黑字
