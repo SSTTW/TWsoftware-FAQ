@@ -440,7 +440,7 @@
     
     由於1.5是預設值，若設計違反此條文，軟體會顯示錯誤訊息提醒設計者。不過，設計者可依據工程判斷，適度調整「錨栓鋼板係數」的數值，以符合其錨定設計。如有特殊需求可以手動輸入小於 1.50 的數值，以降低對邊距的要求。[MOTW PROFIS ENGINEERING FAQ ace89e5d11d548e28d1e54ed0cf083d0.md](https://github.com/user-attachments/files/26669288/MOTW.PROFIS.ENGINEERING.FAQ.ace89e5d11d548e28d1e54ed0cf083d0.md)
 
-![圖片說明](./step1.png)
+![圖片描述](./images/step1.png)
 
 ## 📚 參考法規下載
 * [美國 ACI 318-19 法規](./ACI318%2019.pdf)
