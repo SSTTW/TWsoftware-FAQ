@@ -89,6 +89,7 @@ title: MOTW PROFIS Engineering FAQ
 </style>
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
+<a href="./" style="display:inline-block; padding:8px 15px; background:#f0f0f0; color:#333 !important; border-radius:5px; font-weight:bold; margin-bottom:20px; font-size:0.9em; box-shadow:0 2px 5px rgba(0,0,0,0.1);">← 回到首頁</a>
 
 歡迎使用 PROFIS Engineering 技術問答集。點擊下方問題可展開詳細解答與操作截圖。
 
