@@ -3,6 +3,22 @@ layout: default
 title: MOTW PROFIS Engineering FAQ
 description: 喜立德工程軟體技術支援中心 - 常見問題與解決方案
 ---
+---
+layout: default
+title: MOTW PROFIS Engineering FAQ
+---
+
+<style>
+  /* 隱藏主題內建的頁尾標記 */
+  .site-footer {
+    display: none;
+  }
+  /* 如果是 Architect 主題，改用下面這個 */
+  footer {
+    display: none;
+  }
+</style>
+
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
