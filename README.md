@@ -5,7 +5,7 @@
 * [💡 查看常見問答集 (FAQ.md)](./FAQ.md)
 * [💬 點我直接提問 (GitHub Issues)](https://github.com/SSTTW/TWsoftware-FAQ/issues)
 
-## 📚 參考法規下載
-* [🇺🇸 美國 ACI 318-19](./ACI318%2019.pdf)
-* [🇪🇺 歐洲 ETAG-001](./ETAG-001-annex-c.pdf)
-* [🇹🇼 台灣土木 401 (112年版)](./%E5%9C%9F%E6%9C%A8401%20112.pdf)
+### 📚 快速查閱法規
+* [🇺🇸 美國 ACI 318-19 (PDF)](./ACI318%2019.pdf)
+* [🇪🇺 歐洲 ETAG-001 (PDF)](./ETAG-001-annex-c.pdf)
+* [🇹🇼 台灣土木 401-112 (PDF)](./%E5%9C%9F%E6%9C%A8401%20112.pdf)
