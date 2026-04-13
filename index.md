@@ -8,17 +8,6 @@ layout: default
 title: MOTW PROFIS Engineering FAQ
 ---
 
-<style>
-  /* 隱藏主題內建的頁尾標記 */
-  .site-footer {
-    display: none;
-  }
-  /* 如果是 Architect 主題，改用下面這個 */
-  footer {
-    display: none;
-  }
-</style>
-
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ
 
@@ -165,3 +154,11 @@ title: MOTW PROFIS Engineering FAQ
 </p>
 
 [↑ 回到頂部](#-快速跳轉索引)
+---
+<p align="center">
+  <hr>
+  <font color="#808080" size="2">
+    © 2026 Hilti Engineering Support Team | 僅供技術交流參考，設計請依最終報告為準<br>
+    本頁面內容由 <b>MOTW 技術組</b> 維護與更新
+  </font>
+</p>
