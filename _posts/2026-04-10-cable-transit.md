@@ -14,7 +14,7 @@ excerpt: "探討 Hilti 模組化穿牆封管系統如何提供卓越的防火、
   .back-btn { display: inline-block; padding: 8px 15px; background: #f0f0f0; color: #333 !important; border-radius: 5px; font-weight: bold; margin-bottom: 20px; font-size: 0.9em; text-decoration: none; }
 </style>
 
-<a href="../blog.html" class="back-btn">← 回到技術專欄</a>
+<a href="/TWsoftware-FAQ/blog.html" class="back-btn">← 回到技術專欄</a>
 
 # 🛡️ 喜立德穿牆封管系統 (Cable Transit) 解決方案
 
