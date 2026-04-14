@@ -5,6 +5,8 @@ date: 2026-04-14
 excerpt: "探討 Hilti 模組化穿牆封管系統如何提供卓越的防火、防水與防氣密性能，確保極端環境下的電纜與管線安全。"
 ---
 
+<meta charset="UTF-8">
+
 <style>
   body { color: #333; background-color: #ffffff; line-height: 1.8; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   h1, h2, h3 { color: #D21F3C !important; border-bottom: 2px solid #D21F3C !important; padding-bottom: 10px; margin-top: 40px; }
