@@ -26,7 +26,7 @@ title: MOTW PROFIS Engineering FAQ
 
 <a href="./" class="back-btn">← 回到首頁</a>
 
-# 🏗️ MOTW PROFIS ENGINEERING FAQ (終極完整版)
+# 🏗️ MOTW PROFIS ENGINEERING FAQ 
 
 本技術庫整合了所有關於 PROFIS Engineering 軟體操作、力學原理及最新規範的常見問答。
 
