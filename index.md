@@ -150,6 +150,26 @@ title: MOTW 技術支援中心
   </div>
 </div>
 
+<h2 style="text-align: center; color: #D21F3C; margin-top: 60px;">🔗 外部專業資源</h2>
+<p style="text-align: center; color: #666;">獲取最新官方規範文件與技術支援</p>
+
+<div class="info-grid">
+  <a href="https://www.cpami.gov.tw/" target="_blank" class="info-card" style="display: block;">
+    <h3>🏛️ 內政部國土管理署</h3>
+    <p style="font-size: 0.9em; color:#777;">查詢最新建築物混凝土結構設計規範與法律條文。</p>
+  </a>
+
+  <a href="https://www.hilti.com.tw/engineering/" target="_blank" class="info-card" style="display: block;">
+    <h3>🔴 Hilti 工程資訊中心</h3>
+    <p style="font-size: 0.9em; color:#777;">喜立德官方技術論文、認證報告與 BIM/CAD 庫。</p>
+  </a>
+
+  <a href="https://ask.hilti.com.tw/" target="_blank" class="info-card" style="display: block;">
+    <h3>💬 Ask Hilti 論壇</h3>
+    <p style="font-size: 0.9em; color:#777;">全球工程師的技術社群，解決各種特殊的錨固難題。</p>
+  </a>
+</div>
+
 <hr style="border-top: 1px solid #eee; margin: 60px 0 20px 0;">
 <p align="center" style="color:#808080; font-size:0.85em;">
   © 2026 Hilti Engineering Support Team | 僅供技術交流參考<br>
