@@ -119,7 +119,7 @@ excerpt: "透過互動式圖表，直觀解析台灣土木401-112、美國 ACI 3
   riskSlider.addEventListener('input', function() { updateTable(this.value); });
   updateTable(1);
 
-  // --- 互動工具 2：雷達圖 ---
+// --- 互動工具 2：雷達圖 ---
   const ctx = document.getElementById('radarChart').getContext('2d');
   new Chart(ctx, {
     type: 'radar',
@@ -154,17 +154,33 @@ excerpt: "透過互動式圖表，直觀解析台灣土木401-112、美國 ACI 3
     },
     options: {
       plugins: {
-        legend: { position: 'top' }
+        legend: { position: 'top', labels: { boxWidth: 20, font: { size: 12 } } }
       },
       scales: {
-        r: { min: 40, max: 100, ticks: { display: false }, grid: { color: '#eee' } }
-      }
+        r: { 
+          min: 40, 
+          max: 100, 
+          ticks: { display: false }, 
+          grid: { color: '#eee' },
+          angleLines: { color: '#eee' },
+          pointLabels: { font: { size: 14, weight: 'bold' } }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false
     }
   });
 </script>
 
 ---
 
-### 💡 專家觀點：為什麼需要雙重折減？
-在上述互動工具 1 中，當切換至 **高地震風險區** 時，你會發現台灣與美國規範皆出現了 `0.75 x 0.75` 的係數。
-這是因為在地震力作用下，除了材料本身的強度折減外，還必須額外考量「混凝土開裂」與「負載循環」對剪力傳遞的負面影響。
+### 💡 專家觀點：為什麼需要「雙重折減」？
+
+在上述**互動工具 1** 中，當你切換至 **「高地震風險區」** 時，會發現台灣與美國規範皆出現了 `0.75 x 0.75` 的係數。
+
+這是因為在地震力作用下，除了材料本身的強度折減外，還必須額外考量：
+1. **混凝土開裂 (Cracked Concrete)**：地震會導致混凝土預先開裂，降低錨栓抓地力。
+2. **負載循環 (Cyclic Loading)**：反覆的地震波會使錨栓孔位產生疲勞鬆動。
+
+透過 PROFIS Engineering 的自動化計算，您可以精準掌握這些複雜係數的連動，確保設計在最極端的情況下依然安全無虞。
+
