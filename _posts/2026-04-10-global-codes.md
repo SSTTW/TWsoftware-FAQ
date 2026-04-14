@@ -28,7 +28,7 @@ excerpt: "透過互動式圖表，直觀解析台灣土木401-112、美國 ACI 3
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<a href="../blog.html" class="back-btn">← 回到技術專欄</a>
+<a href="/TWsoftware-FAQ/blog.html" class="back-btn">← 回到技術專欄</a>
 
 # 🌍 全球錨固設計規範對照與抗震解析
 
