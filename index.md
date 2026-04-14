@@ -22,16 +22,16 @@ title: MOTW 技術支援中心
   /* 首頁專屬 Hero 區塊 (大視覺區) */
   .hero-section {
     text-align: center;
-    padding: 8vw 20px; /* 響應式內距 */
+    padding: 8vw 20px;
     margin-top: 20px;
-    background: linear-gradient(to bottom, #ffffff, #fdf2f3); /* 淡淡的粉紅漸層 */
+    background: linear-gradient(to bottom, #ffffff, #fdf2f3);
     border-radius: 12px;
     border: 1px solid #fee2e5;
   }
 
   .hero-section h1 {
     color: #D21F3C !important;
-    font-size: clamp(1.8em, 4vw, 2.5em); /* 響應式字體大小 */
+    font-size: clamp(1.8em, 4vw, 2.5em);
     font-weight: 800;
     margin-bottom: 10px;
     border-bottom: none !important;
@@ -47,7 +47,7 @@ title: MOTW 技術支援中心
   .btn-primary {
     display: inline-block;
     padding: 16px 36px;
-    margin: 10px 5px; /* 增加外距避免手機版按鈕擠在一起 */
+    margin: 10px 5px;
     font-size: 1.1em;
     font-weight: bold;
     color: #ffffff !important;
@@ -87,7 +87,7 @@ title: MOTW 技術支援中心
   /* 次要資訊區塊 (響應式 Grid) */
   .info-grid {
     display: flex;
-    flex-wrap: wrap; /* 允許手機版自動換行 */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin-top: 40px;
@@ -95,11 +95,11 @@ title: MOTW 技術支援中心
 
   .info-card {
     flex: 1;
-    min-width: 250px; /* 手機版會自動變成單行 */
+    min-width: 250px;
     padding: 25px;
     border: 1px solid #eee;
     border-radius: 8px;
-    text-align: left; /* 改為靠左對齊較好閱讀 */
+    text-align: left;
     background: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }
@@ -131,11 +131,11 @@ title: MOTW 技術支援中心
 
 <div class="standards-box">
   <h3 style="margin-top: 0; color: #333 !important; border:none !important;">⚖️ 適用法規與設計標準</h3>
-  <p style="font-size: 0.95em; color: #555;">本平台之設計邏輯與 PE 軟體計算基準，皆符合以下最新國內外規範要求：</p>
+  <p style="font-size: 0.95em; color: #555;">本平台之設計邏輯與 PE 軟體計算基準，皆符合以下最新國內外規範要求（點擊可檢視原廠規範文件）：</p>
   <ul style="font-size: 0.9em; color: #666; line-height: 1.8;">
-    <li><b>🇹🇼 台灣土木 401-112</b>：建築物混凝土結構設計規範 (第十七章 混凝土結構用錨栓)。</li>
-    <li><b>🇺🇸 美國 ACI 318-19 / 318-25</b>：包含開裂混凝土要求與地震載重抵抗 (AC308 / ACI 355.2)。</li>
-    <li><b>🇪🇺 歐洲 ETAG 001 / EAD</b>：符合 DIBT / CSTB 實驗室測試之 ETA 認證標準。</li>
+    <li><a href="./土木401%20112.pdf" target="_blank" style="color: #D21F3C; text-decoration: underline;"><b>🇹🇼 台灣土木 401-112</b></a>：建築物混凝土結構設計規範 (第十七章 混凝土結構用錨栓)。</li>
+    <li><a href="./ACI318%2019.pdf" target="_blank" style="color: #D21F3C; text-decoration: underline;"><b>🇺🇸 美國 ACI 318-19 / 318-25</b></a>：包含開裂混凝土要求與地震載重抵抗 (AC308 / ACI 355.2)。</li>
+    <li><a href="./ETAG-001-annex-c.pdf" target="_blank" style="color: #D21F3C; text-decoration: underline;"><b>🇪🇺 歐洲 ETAG 001 / EAD</b></a>：符合 DIBT / CSTB 實驗室測試之 ETA 認證標準。</li>
   </ul>
 </div>
 
@@ -146,4 +146,12 @@ title: MOTW 技術支援中心
   </div>
   <div class="info-card">
     <h3>🛡️ 專案保密承諾</h3>
-    <p style="font-size: 0.9em;
+    <p style="font-size: 0.9em; color:#777;">所有透過表單提交之諮詢（含 DWG、參數、截圖）皆採私密處理，僅限內部工程團隊檢閱。</p>
+  </div>
+</div>
+
+<hr style="border-top: 1px solid #eee; margin: 60px 0 20px 0;">
+<p align="center" style="color:#808080; font-size:0.85em;">
+  © 2026 Hilti Engineering Support Team | 僅供技術交流參考<br>
+  本網頁由 <b>MOTW 技術組</b> 維護
+</p>
