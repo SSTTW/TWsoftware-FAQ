@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "喜立德穿牆封管系統 (Cable Transit) 解決方案"
+title: "喜利得穿牆封管系統 (Cable Transit) 解決方案"
 date: 2026-04-14
 excerpt: "探討 Hilti 模組化穿牆封管系統如何提供卓越的防火、防水與防氣密性能，確保極端環境下的電纜與管線安全。"
 ---
@@ -16,7 +16,7 @@ excerpt: "探討 Hilti 模組化穿牆封管系統如何提供卓越的防火、
 
 <a href="/TWsoftware-FAQ/blog.html" class="back-btn">← 回到技術專欄</a>
 
-# 🛡️ 喜立德穿牆封管系統 (Cable Transit) 解決方案
+# 🛡️ 喜利得穿牆封管系統 (Cable Transit) 解決方案
 
 在能源、離岸風電及重工業等極端環境中，電纜與管線的穿越孔洞往往是結構中最脆弱的環節。Hilti 穿牆封管系統提供了一套模組化的解決方案，確保結構的完整性。
 
