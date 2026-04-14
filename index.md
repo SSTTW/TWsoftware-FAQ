@@ -77,9 +77,16 @@ title: MOTW 技術支援中心
     <p style="color: #555; font-size: 1.1em;">
       針對 PROFIS Engineering 軟體操作報錯、參數設定異常或法規解釋疑義，我們彙整了完整的 FAQ 資料庫，協助您即時解決設計障礙。
     </p>
-    <a href="/TWsoftware-FAQ/faq.html" style="display: inline-block; margin-top: 15px; padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold;">進入 FAQ 常見問答</a>
-    <div style="margin-top: 20px;">
-      <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="color: #666; font-size: 0.9em; text-decoration: underline;">📩 找不到答案？點此提交私密諮詢</a>
+    
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin-top: 20px;">
+      <a href="/TWsoftware-FAQ/faq.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">進入 FAQ 常見問答</a>
+      
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <span style="font-size: 1.1em; font-weight: 500;">🙋‍♂️ 找不到答案？</span>
+        <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="text-decoration: none; display: flex; align-items: center;">
+          <img src="https://img.shields.io/badge/點我-問更多問題-red?style=for-the-badge&logo=microsoftforms" alt="問更多問題" style="height: 32px; border-radius: 5px;">
+        </a>
+      </div>
     </div>
   </div>
 </div>
