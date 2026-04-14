@@ -6,3 +6,4 @@ header_pages:
 # 自定義簡約風格設定
 minima:
   skin: classic # 使用經典白底黑字
+future: true
