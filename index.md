@@ -81,7 +81,7 @@ title: MOTW 技術支援中心
 <div class="hero-section">
   <h1>PROFIS Engineering</h1>
   <p>掌握最新錨固設計文獻，優化工程安全與效率。我們提供專業的應用指南與技術諮詢服務。</p>
-  <a href="/TWsoftware-FAQ/blog.html" style="display: inline-block; padding: 15px 40px; background: #D21F3C; color: white; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(210,31,60,0.3);">📖 瀏覽全部應用文獻</a>
+  <a href="/TWsoftware-FAQ/2026/04/15/profis-master-manual.html" style="display: inline-block; padding: 15px 40px; background: #D21F3C; color: white; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(210,31,60,0.3);">📖 立即下載技術手冊</a>
 </div>
 
 <div class="standards-box">
@@ -133,11 +133,11 @@ title: MOTW 技術支援中心
   <div class="faq-text">
     <h2 style="color: #D21F3C; margin-top: 0;">❓ 技術問題快速排除</h2>
     <p style="color: #555; font-size: 1.1em;">
-      針對 PROFIS Engineering 軟體操作報錯、參數設定異常或法規解釋疑義，我們彙整了完整的 FAQ 資料庫。
+      針對 PROFIS Engineering 軟體操作報錯、參數設定異常或法規解釋疑義，我們彙整了完整的 FAQ 資料庫與下載專區。
     </p>
     
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin-top: 20px;">
-      <a href="/TWsoftware-FAQ/faq.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">進入 FAQ</a>
+      <a href="/TWsoftware-FAQ/2026/04/15/profis-master-manual.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">進入資源中心</a>
       <div style="display: flex; align-items: center; gap: 5px;">
         <span style="font-size: 1.1em; font-weight: 500;">🙋‍♂️ 找不到答案？</span>
         <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="text-decoration: none;">
