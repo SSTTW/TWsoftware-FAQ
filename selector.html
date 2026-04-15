@@ -53,7 +53,7 @@ title: 錨栓/植筋快速選型指南
 
   <div id="resultBox" class="result-box">
     <p style="margin: 0; font-size: 0.9em; color: #888;">最佳推薦配置：</p>
-    <h3 style="color: #D21F3C; margin: 5px 0 15px 0; font-size: 1.6em;" id="productName">HST3</h3>
+    <h3 style="color: #D21F3C; margin: 5px 0 15px 0; font-size: 1.6em;" id="productName">HST4</h3>
     <p id="productReason" style="color: #555; line-height: 1.6;"></p>
     
     <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px dashed #ddd;">
@@ -73,18 +73,18 @@ title: 錨栓/植筋快速選型指南
     let product = "";
     let reason = "";
 
-    // 簡易選型邏輯引擎
+    // 更新選型邏輯：將 HST3 全面替換為最新一代 HST4
     if (seismic === 'c2') {
       if (env === 'outdoor') {
         product = "HIT-HY 200-R V3 + HAS-U 不鏽鋼螺桿";
         reason = "面對 C2 嚴格抗震與室外防腐雙重考驗，強烈建議使用頂級植筋膠配合不鏽鋼螺桿，確保極端環境下的最高安全性與耐久度。";
       } else {
-        product = "HST3 膨脹錨栓 (碳鋼) 或 HUS4 混凝土螺栓";
-        reason = "室內高風險區的首選。HST3 具備最高 C2 抗震認證；若有邊距限制或要求施工速度，HUS4 螺栓將提供極佳的靈活性。";
+        product = "HST4 膨脹錨栓 (碳鋼) 或 HUS4 混凝土螺栓";
+        reason = "室內高風險區的首選。新一代 HST4 具備最強的 C2 抗震認證與載重能力；若有邊距限制或要求施工速度，HUS4 螺栓將提供極佳的靈活性。";
       }
     } else if (seismic === 'c1') {
-      product = "HUS4 混凝土螺栓 或 HST3";
-      reason = "符合 C1 中度抗震需求，建議使用具備 ETA 認證的螺栓。HUS4 提供快速安裝且可重覆拆卸的特性，非常適合一般商辦應用。";
+      product = "HUS4 混凝土螺栓 或 HST4";
+      reason = "符合 C1 中度抗震需求，建議使用具備 ETA 認證的產品。HST4 提供卓越的拉拔強度，而 HUS4 提供快速安裝且可重覆拆卸的特性。";
     } else {
       if (env === 'outdoor') {
         product = "HIT-HY 200 或 RE 500 V4 + 不鏽鋼螺桿";
