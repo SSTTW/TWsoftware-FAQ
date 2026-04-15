@@ -38,6 +38,11 @@ title: MOTW 技術專欄
 
 這裡收錄了 PROFIS Engineering 軟體的進階應用指南與 Hilti 解決方案的技術解析，協助工程師掌握最先進的設計邏輯。
 
+<div style="text-align: center; margin: 30px 0; position: relative;">
+  <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+  <ul id="results-container" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 10px auto; background: white; border-radius: 12px; position: absolute; left: 0; right: 0; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></ul>
+</div>
+
 <div class="blog-grid">
   {% for post in site.posts %}
   <a href="{{ post.url | relative_url }}" class="blog-card">
@@ -49,5 +54,16 @@ title: MOTW 技術專欄
 </div>
 
 <div style="margin-top: 40px; text-align: center;">
-  <a href="./" style="color: #666; text-decoration: underline;">返回首頁</a>
+  <a href="/TWsoftware-FAQ/" style="color: #666; text-decoration: underline;">返回首頁</a>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/TWsoftware-FAQ/search.json',
+    searchResultTemplate: '<li style="padding: 15px; border-bottom: 1px solid #f0f0f0;"><a href="{url}" style="color: #D21F3C; font-weight: bold; text-decoration: none; display: block;">{title}</a></li>',
+    noResultsText: '<li style="padding: 15px; color: #888; text-align:center;">找不到相關文章 😢，請嘗試其他關鍵字。</li>'
+  });
+</script>
