@@ -25,6 +25,15 @@ title: MOTW 技術支援中心
   }
   .hero-section h1 { color: #D21F3C !important; font-size: clamp(1.8em, 5vw, 2.8em); font-weight: 800; border-bottom: none !important; }
 
+  /* Hero 按鈕群組 */
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
   /* --- 互動圖表並列容器 --- */
   .charts-flex-container {
     display: flex;
@@ -81,7 +90,11 @@ title: MOTW 技術支援中心
 <div class="hero-section">
   <h1>PROFIS Engineering</h1>
   <p>掌握最新錨固設計文獻，優化工程安全與效率。我們提供專業的應用指南與技術諮詢服務。</p>
-  <a href="/TWsoftware-FAQ/2026/04/15/profis-master-manual.html" style="display: inline-block; padding: 15px 40px; background: #D21F3C; color: white; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(210,31,60,0.3);">📖 立即下載技術手冊</a>
+  
+  <div class="hero-buttons">
+    <a href="/TWsoftware-FAQ/2026/04/15/profis-master-manual.html" style="display: inline-block; padding: 15px 35px; background: #D21F3C; color: white; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(210,31,60,0.3);">📖 立即下載技術手冊</a>
+    <a href="/TWsoftware-FAQ/selector.html" style="display: inline-block; padding: 15px 35px; background: #ffffff; color: #D21F3C; border: 2px solid #D21F3C; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">🎯 快速選型工具</a>
+  </div>
 </div>
 
 <div class="standards-box">
@@ -155,72 +168,4 @@ title: MOTW 技術支援中心
       <h3 style="color:#D21F3C !important; margin-top:0;">🏛️ 內政部國土管理署</h3>
       <p style="font-size:0.9em; color:#777;">最新建築規範與營建法律條文。</p>
     </a>
-    <a href="https://www.hilti.com.tw/engineering/" target="_blank" class="info-card">
-      <h3 style="color:#D21F3C !important; margin-top:0;">🔴 Hilti 工程中心</h3>
-      <p style="font-size:0.9em; color:#777;">官方技術報告與 BIM/CAD 模型庫。</p>
-    </a>
-  </div>
-</div>
-
-<p align="center" style="color:#808080; font-size:0.85em; margin-top:60px;">
-  © 2026 Hilti Engineering Support Team | 僅供技術交流參考
-</p>
-
-<script>
-  // --- 表格邏輯 (依據 HST Seismic PPT 更新技術參數) ---
-  const riskSlider = document.getElementById('riskSlider');
-  const riskText = document.getElementById('riskText');
-  const tableBody = document.getElementById('tableBody');
-  const tableData = {
-    1: { 
-      text: "🟢 低地震風險區 (Static Only)", 
-      color: "#28a745", 
-      tw: ["無要求", "不考慮開裂", "ϕ = 0.75"], 
-      us: ["SDC A/B", "不考慮開裂", "ϕ = 0.75"], 
-      eu: ["Static Design", "不考慮開裂", "γ = 1.5"] 
-    },
-    2: { 
-      text: "🟡 中地震風險區 (一般商辦)", 
-      color: "#ffc107", 
-      tw: ["建議 C1 等級", "0.5 mm (C1認證)", "ϕ = 0.75"], 
-      us: ["SDC C", "強制開裂", "ϕ = 0.75"], 
-      eu: ["C1 認證產品", "強制開裂", "γ = 1.5"] 
-    },
-    3: { 
-      text: "🔴 高地震風險區 (醫療/維生建物)", 
-      color: "#D21F3C", 
-      tw: ["強制 C2 等級", "0.8 mm (C2認證)", "0.75 × 0.75"], 
-      us: ["SDC D/E/F", "極嚴格開裂", "0.75 × 0.75"], 
-      eu: ["C2 認證產品", "循環載重開裂", "γ = 地震折減"] 
-    }
-  };
-  const rows = ["抗震等級需求", "混凝土開裂設定", "強度折減 (剪力)"];
-  function updateTable(val) {
-    riskText.innerHTML = tableData[val].text;
-    riskText.style.color = tableData[val].color;
-    let html = "";
-    for(let i=0; i<rows.length; i++){
-      html += `<tr><td style="font-weight:bold; background:#f9f9f9;">${rows[i]}</td><td>${tableData[val].tw[i]}</td><td>${tableData[val].us[i]}</td><td>${tableData[val].eu[i]}</td></tr>`;
-    }
-    tableBody.innerHTML = html;
-  }
-  riskSlider.addEventListener('input', function() { updateTable(this.value); });
-  updateTable(1);
-
-  // --- 雷達圖邏輯 ---
-  new Chart(document.getElementById('radarChart'), {
-    type: 'radar',
-    data: {
-      labels: ['抗震嚴格度', '計算複雜度', '產品認證門檻', '更新頻率'],
-      datasets: [
-        { label: '🇹🇼 TW', data: [90, 75, 85, 70], backgroundColor: 'rgba(210,31,60,0.2)', borderColor: '#D21F3C', borderWidth: 2 },
-        { label: '🇺🇸 US', data: [85, 80, 80, 90], backgroundColor: 'rgba(54,162,235,0.2)', borderColor: '#36A2EB', borderWidth: 2 },
-        { label: '🇪🇺 EU', data: [80, 95, 95, 85], backgroundColor: 'rgba(255,206,86,0.2)', borderColor: '#FFCE56', borderWidth: 2 }
-      ]
-    },
-    options: {
-      maintainAspectRatio: false,
-      scales: { r: { min: 40, max: 100, ticks: { display: false } } }
-    }
-  });
-</script>
+    <a href="https://www.hilti.com.
