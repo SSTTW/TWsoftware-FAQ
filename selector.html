@@ -1,0 +1,102 @@
+---
+layout: default
+title: 錨栓/植筋快速選型指南
+---
+
+<style>
+  .selector-container { max-width: 600px; margin: 40px auto; padding: 30px; background: #fafafa; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+  .form-group { margin-bottom: 25px; }
+  .form-group label { display: block; font-weight: bold; margin-bottom: 10px; color: #333; font-size: 1.1em; }
+  .form-group select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; background: #fff; cursor: pointer; }
+  .calc-btn { width: 100%; padding: 15px; background: #333; color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px;}
+  .calc-btn:hover { background: #000; }
+  
+  .result-box { margin-top: 30px; padding: 25px; background: #fff; border-left: 6px solid #D21F3C; border-radius: 8px; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.08); animation: fadeIn 0.5s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .pe-btn { display: inline-block; padding: 15px 30px; background: #D21F3C; color: white !important; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; box-shadow: 0 4px 10px rgba(210,31,60,0.3); transition: 0.3s; }
+  .pe-btn:hover { background: #b01a32; transform: scale(1.05); }
+</style>
+
+<a href="/TWsoftware-FAQ/" style="color:#D21F3C; font-weight:bold; display:inline-block; margin-top: 20px;">← 回到首頁</a>
+
+<div class="selector-container">
+  <h2 style="text-align: center; color: #D21F3C; margin-top: 0;">🎯 錨栓/植筋 快速選型工具</h2>
+  <p style="text-align: center; color: #666; margin-bottom: 30px;">只需 3 個步驟，自動為您篩選符合最新法規的 Hilti 解決方案。</p>
+
+  <div class="form-group">
+    <label>1️⃣ 安裝環境 (腐蝕風險)</label>
+    <select id="env">
+      <option value="indoor">室內乾燥 (一般商辦/廠房內部)</option>
+      <option value="outdoor">室外/潮濕 (外牆/頂樓/基礎)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>2️⃣ 抗震設計等級 (Seismic)</label>
+    <select id="seismic">
+      <option value="none">無抗震要求 (純靜載/次要構件)</option>
+      <option value="c1">中度地震風險 (C1 認證需求)</option>
+      <option value="c2">高度地震風險 (C2 認證需求/維生建物)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>3️⃣ 混凝土狀態</label>
+    <select id="concrete">
+      <option value="cracked">開裂混凝土 (預設安全考量，推薦)</option>
+      <option value="uncracked">非開裂混凝土 (須經嚴格計算證明)</option>
+    </select>
+  </div>
+
+  <button class="calc-btn" onclick="calculateSelection()">產生推薦方案</button>
+
+  <div id="resultBox" class="result-box">
+    <p style="margin: 0; font-size: 0.9em; color: #888;">最佳推薦配置：</p>
+    <h3 style="color: #D21F3C; margin: 5px 0 15px 0; font-size: 1.6em;" id="productName">HST3</h3>
+    <p id="productReason" style="color: #555; line-height: 1.6;"></p>
+    
+    <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px dashed #ddd;">
+      <p style="font-weight: bold; color: #333; margin-bottom: 5px;">準備好進行法規檢核了嗎？</p>
+      <a href="https://profisengineering.hilti.com/" target="_blank" class="pe-btn">前往 PROFIS Engineering 雲端計算 ➔</a>
+      <p style="font-size: 0.85em; color: #888; margin-top: 10px;">*登入後即可直接套用此推薦產品進行設計</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function calculateSelection() {
+    const env = document.getElementById('env').value;
+    const seismic = document.getElementById('seismic').value;
+    const concrete = document.getElementById('concrete').value;
+    
+    let product = "";
+    let reason = "";
+
+    // 簡易選型邏輯引擎
+    if (seismic === 'c2') {
+      if (env === 'outdoor') {
+        product = "HIT-HY 200-R V3 + HAS-U 不鏽鋼螺桿";
+        reason = "面對 C2 嚴格抗震與室外防腐雙重考驗，強烈建議使用頂級植筋膠配合不鏽鋼螺桿，確保極端環境下的最高安全性與耐久度。";
+      } else {
+        product = "HST3 膨脹錨栓 (碳鋼) 或 HUS4 混凝土螺栓";
+        reason = "室內高風險區的首選。HST3 具備最高 C2 抗震認證；若有邊距限制或要求施工速度，HUS4 螺栓將提供極佳的靈活性。";
+      }
+    } else if (seismic === 'c1') {
+      product = "HUS4 混凝土螺栓 或 HST3";
+      reason = "符合 C1 中度抗震需求，建議使用具備 ETA 認證的螺栓。HUS4 提供快速安裝且可重覆拆卸的特性，非常適合一般商辦應用。";
+    } else {
+      if (env === 'outdoor') {
+        product = "HIT-HY 200 或 RE 500 V4 + 不鏽鋼螺桿";
+        reason = "室外環境優先考量防腐，化學錨栓不僅能避免基材膨脹應力，還能提供最穩定的靜載表現。";
+      } else {
+        product = "KB-TZ2 膨脹錨栓 或 HUS3 螺栓";
+        reason = "最經濟實惠的室內靜載解決方案，適合一般管線、風管支架或輕型設備固定。";
+      }
+    }
+
+    document.getElementById('productName').innerText = product;
+    document.getElementById('productReason').innerText = reason;
+    document.getElementById('resultBox').style.display = 'block';
+  }
+</script>
