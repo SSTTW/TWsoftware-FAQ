@@ -34,7 +34,7 @@ title: MOTW 技術支援中心
   }
   .chart-box {
     flex: 1;
-    min-width: 350px; /* 確保手機版會換行 */
+    min-width: 350px;
     background: #fafafa;
     border: 1px solid #eee;
     border-radius: 15px;
@@ -42,12 +42,21 @@ title: MOTW 技術支援中心
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
   
-  /* 表格與雷達圖微調 */
   .risk-label { font-size: 1.1em; font-weight: bold; color: #D21F3C; margin: 10px 0; min-height: 1.5em; text-align: center;}
   table { width: 100%; border-collapse: collapse; font-size: 0.85em; background: #fff; }
   th { background-color: #D21F3C; color: white; padding: 8px; border: 1px solid #ddd; }
   td { padding: 8px; border: 1px solid #ddd; text-align: center; }
   .radar-canvas-wrapper { height: 300px; position: relative; }
+
+  /* 適用法規區塊 (PDF 下載修正) */
+  .standards-box {
+    background-color: #fafafa;
+    border-left: 5px solid #D21F3C;
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 8px;
+  }
+  .standards-box a { color: #D21F3C; text-decoration: underline; font-weight: bold; }
 
   /* FAQ 互動區塊 */
   .faq-highlight-container {
@@ -75,10 +84,19 @@ title: MOTW 技術支援中心
   <a href="/TWsoftware-FAQ/blog.html" style="display: inline-block; padding: 15px 40px; background: #D21F3C; color: white; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(210,31,60,0.3);">📖 瀏覽全部應用文獻</a>
 </div>
 
+<div class="standards-box">
+  <h3 style="margin-top: 0; color: #333;">⚖️ 適用法規與設計標準</h3>
+  <p style="font-size: 0.95em; color: #555;">點擊下方連結下載原廠與官方規範文件：</p>
+  <ul style="font-size: 0.9em; color: #666; line-height: 1.8;">
+    <li><a href="/TWsoftware-FAQ/土木401%20112.pdf" target="_blank">🇹🇼 台灣土木 401-112 規範</a></li>
+    <li><a href="/TWsoftware-FAQ/ACI318%2019.pdf" target="_blank">🇺🇸 美國 ACI 318-19 規範</a></li>
+    <li><a href="/TWsoftware-FAQ/ETAG-001-annex-c.pdf" target="_blank">🇪🇺 歐洲 ETAG 001 認證標準</a></li>
+  </ul>
+</div>
+
 <h2 style="text-align: center; color: #333;">📊 核心技術數據：三大規範動態對照</h2>
 
 <div class="charts-flex-container">
-  
   <div class="chart-box">
     <h3 style="color:#D21F3C; margin-top:0; text-align:center;">🎛️ 地震風險動態對照</h3>
     <div style="text-align:center;">
@@ -94,8 +112,7 @@ title: MOTW 技術支援中心
           <th>🇪🇺 歐洲</th>
         </tr>
       </thead>
-      <tbody id="tableBody">
-        </tbody>
+      <tbody id="tableBody"></tbody>
     </table>
   </div>
 
@@ -105,7 +122,6 @@ title: MOTW 技術支援中心
       <canvas id="radarChart"></canvas>
     </div>
   </div>
-
 </div>
 
 <div class="faq-highlight-container">
@@ -117,7 +133,6 @@ title: MOTW 技術支援中心
     <p style="color: #555; font-size: 1.1em;">
       針對 PROFIS Engineering 軟體操作報錯、參數設定異常或法規解釋疑義，我們彙整了完整的 FAQ 資料庫。
     </p>
-    
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin-top: 20px;">
       <a href="/TWsoftware-FAQ/faq.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold;">進入 FAQ</a>
       <div style="display: flex; align-items: center; gap: 5px;">
