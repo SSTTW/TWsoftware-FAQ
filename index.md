@@ -5,7 +5,6 @@ title: MOTW 技術支援中心
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
@@ -84,7 +83,7 @@ title: MOTW 技術支援中心
 
   /* 資源導航 */
   .info-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-  .info-card { flex: 1; min-width: 250px; padding: 25px; border: 1px solid #eee; border-radius: 12px; background: #fff; text-decoration: none; }
+  .info-card { flex: 1; min-width: 250px; padding: 25px; border: 1px solid #eee; border-radius: 12px; background: #fff; text-decoration: none; display: block; }
 </style>
 
 <div class="hero-section">
@@ -150,7 +149,7 @@ title: MOTW 技術支援中心
     </p>
     
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin-top: 20px;">
-      <a href="/TWsoftware-FAQ/2026/04/15/profis-master-manual.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">進入資源中心</a>
+      <a href="/TWsoftware-FAQ/faq.html" style="padding: 12px 30px; background: #D21F3C; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">點我看更多 FAQ</a>
       <div style="display: flex; align-items: center; gap: 5px;">
         <span style="font-size: 1.1em; font-weight: 500;">🙋‍♂️ 找不到答案？</span>
         <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="text-decoration: none;">
@@ -168,4 +167,62 @@ title: MOTW 技術支援中心
       <h3 style="color:#D21F3C !important; margin-top:0;">🏛️ 內政部國土管理署</h3>
       <p style="font-size:0.9em; color:#777;">最新建築規範與營建法律條文。</p>
     </a>
-    <a href="https://www.hilti.com.
+    <a href="https://www.hilti.com.tw/engineering/" target="_blank" class="info-card">
+      <h3 style="color:#D21F3C !important; margin-top:0;">🔴 Hilti 工程中心</h3>
+      <p style="font-size:0.9em; color:#777;">官方技術報告與 BIM/CAD 模型庫。</p>
+    </a>
+  </div>
+</div>
+
+<p align="center" style="color:#808080; font-size:0.85em; margin-top:60px;">
+  © 2026 Hilti Engineering Support Team | 僅供技術交流參考
+</p>
+
+<script>
+  // --- 表格邏輯 ---
+  const riskSlider = document.getElementById('riskSlider');
+  const riskText = document.getElementById('riskText');
+  const tableBody = document.getElementById('tableBody');
+  const tableData = {
+    1: { text: "🟢 低地震風險區 (Static Only)", color: "#28a745", tw: ["無要求", "不考慮開裂", "ϕ = 0.75"], us: ["SDC A/B", "不考慮開裂", "ϕ = 0.75"], eu: ["Static Design", "不考慮開裂", "γ = 1.5"] },
+    2: { text: "🟡 中地震風險區 (一般商辦)", color: "#ffc107", tw: ["建議 C1 等級", "0.5 mm (C1認證)", "ϕ = 0.75"], us: ["SDC C", "強制開裂", "ϕ = 0.75"], eu: ["C1 認證產品", "強制開裂", "γ = 1.5"] },
+    3: { text: "🔴 高地震風險區 (醫療/維生建物)", color: "#D21F3C", tw: ["強制 C2 等級", "0.8 mm (C2認證)", "0.75 × 0.75"], us: ["SDC D/E/F", "極嚴格開裂", "0.75 × 0.75"], eu: ["C2 認證產品", "循環載重開裂", "γ = 地震折減"] }
+  };
+  const rows = ["抗震等級需求", "混凝土開裂設定", "強度折減 (剪力)"];
+  
+  function updateTable(val) {
+    if(!riskText || !tableBody) return; // 防呆機制
+    riskText.innerHTML = tableData[val].text;
+    riskText.style.color = tableData[val].color;
+    let html = "";
+    for(let i=0; i<rows.length; i++){
+      html += `<tr><td style="font-weight:bold; background:#f9f9f9;">${rows[i]}</td><td>${tableData[val].tw[i]}</td><td>${tableData[val].us[i]}</td><td>${tableData[val].eu[i]}</td></tr>`;
+    }
+    tableBody.innerHTML = html;
+  }
+  
+  if(riskSlider) {
+    riskSlider.addEventListener('input', function() { updateTable(this.value); });
+    updateTable(1);
+  }
+
+  // --- 雷達圖邏輯 ---
+  const canvasEl = document.getElementById('radarChart');
+  if(canvasEl) {
+    new Chart(canvasEl, {
+      type: 'radar',
+      data: {
+        labels: ['抗震嚴格度', '計算複雜度', '產品認證門檻', '更新頻率'],
+        datasets: [
+          { label: '🇹🇼 TW', data: [90, 75, 85, 70], backgroundColor: 'rgba(210,31,60,0.2)', borderColor: '#D21F3C', borderWidth: 2 },
+          { label: '🇺🇸 US', data: [85, 80, 80, 90], backgroundColor: 'rgba(54,162,235,0.2)', borderColor: '#36A2EB', borderWidth: 2 },
+          { label: '🇪🇺 EU', data: [80, 95, 95, 85], backgroundColor: 'rgba(255,206,86,0.2)', borderColor: '#FFCE56', borderWidth: 2 }
+        ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: { r: { min: 40, max: 100, ticks: { display: false } } }
+      }
+    });
+  }
+</script>
