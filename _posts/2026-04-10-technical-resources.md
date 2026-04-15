@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "PROFIS Engineering 官方技術手冊下載專區"
-date: 2026-04-19
+date: 2026-04-15
 excerpt: "本專區提供 PROFIS Engineering 相關之設計手冊、鋼對混凝土與混凝土對混凝土連接之技術指引下載。"
 ---
 
