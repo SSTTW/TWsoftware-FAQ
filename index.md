@@ -103,10 +103,10 @@ title: MOTW 技術支援中心
 
 <h2 style="text-align: center; color: #333; margin-top: 40px;">📂 快速分類指南</h2>
 <div class="selector-grid" markdown="0">
-  <a href="/TWsoftware-FAQ/faq.html#混凝土固定" class="selector-card"><span>🏢</span><h4>混凝土固定</h4><p style="font-size:0.8em; color:#888;">RC結構與梁柱連接</p></a>
-  <a href="/TWsoftware-FAQ/faq.html#磚牆固定" class="selector-card"><span>🧱</span><h4>磚牆固定</h4><p style="font-size:0.8em; color:#888;">空心磚與輕質隔間</p></a>
-  <a href="/TWsoftware-FAQ/faq.html#預埋系統" class="selector-card"><span>📐</span><h4>預埋槽系統</h4><p style="font-size:0.8em; color:#888;">Anchor Channel 預埋</p></a>
-  <a href="/TWsoftware-FAQ/faq.html#機械化學比較" class="selector-card"><span>⚡</span><h4>錨栓原理比較</h4><p style="font-size:0.8em; color:#888;">機械 vs 化學選型</p></a>
+  <a href="/TWsoftware-FAQ/faq.html#混凝土固定" class="selector-card"><span>🏢</span><h4>混凝土固定</h4><p style="font-size:0.8em; color:#888;">RC結構與梁柱連接</p></a>
+  <a href="/TWsoftware-FAQ/faq.html#玻璃欄杆" class="selector-card"><span>🪟</span><h4>玻璃欄杆</h4><p style="font-size:0.8em; color:#888;">底座固定與護欄設計</p></a>
+  <a href="/TWsoftware-FAQ/faq.html#預埋系統" class="selector-card"><span>📐</span><h4>預埋槽系統</h4><p style="font-size:0.8em; color:#888;">Anchor Channel 預埋</p></a>
+  <a href="/TWsoftware-FAQ/faq.html#機械化學比較" class="selector-card"><span>⚡</span><h4>錨栓原理比較</h4><p style="font-size:0.8em; color:#888;">機械 vs 化學選型</p></a>
 </div>
 
 <h2 style="text-align: center; color: #333; margin-top: 60px;">📊 核心技術數據：三大規範動態對照</h2>
