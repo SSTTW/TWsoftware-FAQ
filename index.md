@@ -60,19 +60,19 @@ title: MOTW 技術支援中心
     <div class="selector-controls">
       <div class="control-group">
         <label>地震風險</label>
-        <select id="sel-seismic"><option value="low">低地震 (Static)</option><option value="high">高地震 (C2 抗震)</option></select>
+        <select id="sel-seismic"><option value="low">低地震 (Static)</option><option value="high">高地震C2 </option></select>
       </div>
       <div class="control-group">
         <label>混凝土狀態</label>
-        <select id="sel-concrete"><option value="non-cracked">無開裂 (建議)</option><option value="cracked">已開裂 (極限)</option></select>
+        <select id="sel-concrete"><option value="non-cracked">非開裂混凝土 </option><option value="cracked">開裂混凝土 </option></select>
       </div>
       <div class="control-group">
         <label>環境條件</label>
-        <select id="sel-env"><option value="indoor">室內 (乾燥)</option><option value="outdoor">室外 (腐蝕/潮濕)</option></select>
+        <select id="sel-env"><option value="indoor">乾燥一般環境</option><option value="outdoor">潮濕特殊環境</option></select>
       </div>
       <div class="control-group">
         <label>優先偏好</label>
-        <select id="sel-type"><option value="mechanical">機械錨栓 (快速)</option><option value="chemical">化學植筋 (高強)</option></select>
+        <select id="sel-type"><option value="mechanical">機械錨栓</option><option value="chemical">化學藥劑 </option></select>
       </div>
     </div>
     <button onclick="runSelection()" style="width:100%; padding:12px; background:#333; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">🔍 獲取初步推薦結果</button>
@@ -85,7 +85,7 @@ title: MOTW 技術支援中心
 
   <div class="hero-buttons">
     <a href="/TWsoftware-FAQ/faq.html" style="display: inline-block; padding: 12px 30px; background: #ffffff; color: #D21F3C; border: 2px solid #D21F3C; border-radius: 50px; font-weight: bold;">📚 進入 FAQ 知識庫</a>
-    <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="display: inline-block; padding: 12px 30px; background: #eee; color: #333; border-radius: 50px; font-weight: bold;">💬 私密技術諮詢</a>
+    <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="display: inline-block; padding: 12px 30px; background: #eee; color: #333; border-radius: 50px; font-weight: bold;">💬 Hilti技術諮詢</a>
   </div>
 </div>
 
@@ -119,8 +119,8 @@ title: MOTW 技術支援中心
 <div class="faq-highlight-container" markdown="0">
   <div class="faq-image"><img src="/TWsoftware-FAQ/images/faq_preview.png" alt="FAQ Preview"></div>
   <div class="faq-text">
-    <h2 style="color:#D21F3C; margin-top:0;">❓ 技術問題快速排除</h2>
-    <p style="color:#555;">針對軟體報錯、參數設定異常或法規解釋疑義，我們彙整了完整的 FAQ 資料庫。</p>
+    <h2 style="color:#D21F3C; margin-top:0;"> 技術問題 快速排除</h2>
+    <p style="color:#555;">針對軟體使用、參數設定、法規解釋疑義，我們彙整了完整的 FAQ 資料庫，提供參考。</p>
     <a href="/TWsoftware-FAQ/faq.html" style="display:inline-block; padding:12px 30px; background:#D21F3C; color:white; border-radius:8px; font-weight:bold;">查看完整 FAQ</a>
   </div>
 </div>
@@ -129,7 +129,7 @@ title: MOTW 技術支援中心
   <h2 style="text-align:center; color:#333; margin-bottom:30px;">🔗 專業資源導航</h2>
   <div class="info-grid">
     <a href="https://www.nlma.gov.tw/ch" target="_blank" class="info-card"><h3>🏛️ 國土管理署</h3><p style="font-size:0.9em; color:#777;">最新建築規範與法律條文。</p></a>
-    <a href="https://www.hilti.com.tw/engineering/" target="_blank" class="info-card"><h3>🔴 Hilti 工程中心</h3><p style="font-size:0.9em; color:#777;">技術報告與 BIM/CAD 模型庫。</p></a>
+    <a href="https://www.hilti.com.tw/engineering/" target="_blank" class="info-card"><h3>🔴 Hilti 工程中心</h3><p style="font-size:0.9em; color:#777;">線上研討會、技術報告 與 BIM/CAD 模型庫。</p></a>
   </div>
 </div>
 
@@ -148,9 +148,9 @@ title: MOTW 技術支援中心
       if (type === "chemical") { product = "HIT-RE 500 V3"; note = "高地震區首選化學植筋，具備 C2 抗震認證。"; }
       else { product = "HST4 / HSL4"; note = "最新機械錨栓，針對開裂混凝土與抗震設計。"; }
     } else {
-      if (env === "outdoor") { product = "HIT-RE 500 V3 (A4)"; note = "室外環境建議使用化學植筋搭配不鏽鋼。"; }
-      else if (type === "mechanical") { product = "HUS4 / HST4"; note = "室內乾燥環境機械錨栓效率最高。"; }
-      else { product = "HIT-HY 200-R V3"; note = "室內化學植筋首選，固化速度快。"; }
+      if (env === "outdoor") { product = "HIT-RE 500 V3 (A4)"; note = "潮濕特殊環境建議使用化學植筋搭配不鏽鋼。"; }
+      else if (type === "mechanical") { product = "HUS4 / HST4"; note = "乾燥一般環境機械錨栓效率最高。"; }
+      else { product = "HVU2"; note = "乾燥一般化學植筋首選，固化速度快。"; }
     }
     document.getElementById('res-product').innerText = "推薦產品：" + product;
     document.getElementById('res-note').innerText = note;
