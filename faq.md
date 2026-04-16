@@ -69,11 +69,11 @@ title: MOTW PROFIS Engineering FAQ
 <div class="answer-content">
 1. 先由結構軟體分析載重組合並複製。<br>
 2. 在 PE 中點選「導入荷載」並貼上：<br>
-![Excel 1](./images/image%2011.png)<br>
+![Excel 1](./images/image11.png)<br>
 3. 調整軸向與單位（拉力為正，壓力為負）：<br>
-![Excel 4](./images/image%2014.png)<br>
+![Excel 4](./images/image14.png)<br>
 4. 點擊應用（一次最多支援 1000 種組合）：<br>
-![Excel 6](./images/image%2016.png)
+![Excel 6](./images/image16.png)
 </div>
 </details>
 
