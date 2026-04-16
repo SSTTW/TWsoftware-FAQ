@@ -23,7 +23,7 @@ title: MOTW 技術支援中心
   
   .chart-box { 
     flex: 1; 
-    min-width: 320px; /* 降低最小寬度以適應小螢幕 */
+    min-width: 320px; 
     background: #fafafa; 
     border: 1px solid #eee; 
     border-radius: 15px; 
@@ -45,15 +45,21 @@ title: MOTW 技術支援中心
   td { padding: 8px; border: 1px solid #ddd; text-align: center; }
   .radar-canvas-wrapper { height: 300px; position: relative; width: 100%; }
 
-  /* 快速選型工具卡片 */
+  /* 互動式快速選型工具 */
   .selector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 30px 0; }
   .selector-card { 
     background: #fff; border: 2px solid #eee; border-radius: 12px; padding: 20px; text-align: center;
     transition: 0.3s; cursor: pointer;
   }
-  .selector-card:hover { border-color: #D21F3C; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210,31,60,0.1); }
+  .selector-card:hover, .selector-card.active { border-color: #D21F3C; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210,31,60,0.1); background: #fdf2f3; }
   .selector-card h4 { margin: 10px 0; color: #333; }
   .selector-card i { font-size: 2em; display: block; margin-bottom: 10px; }
+
+  /* 選型結果動態顯示區塊 */
+  .recommendation-box { display: none; background: #fff; border-left: 5px solid #D21F3C; padding: 25px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  .profis-btn { display: inline-block; margin-top: 15px; padding: 12px 30px; background: #D21F3C; color: white !important; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+  .profis-btn:hover { background: #b01730; transform: scale(1.02); }
 
   /* 其他現有樣式保持不變 */
   .standards-box { background-color: #fafafa; border-left: 5px solid #D21F3C; padding: 20px; margin: 40px 0; border-radius: 8px; }
@@ -87,26 +93,33 @@ title: MOTW 技術支援中心
 
 <h2 style="text-align: center; color: #333; margin-top: 60px;">🎯 快速選型指南：找到正確的設計路徑</h2>
 <div class="selector-grid" markdown="0">
-  <a href="/TWsoftware-FAQ/faq.html#混凝土固定" class="selector-card">
+  <div class="selector-card" onclick="showRecommendation('concrete', this)">
     <span>🏢</span>
     <h4>混凝土固定</h4>
     <p style="font-size: 0.8em; color: #888;">適用於 RC 結構與梁柱連接</p>
-  </a>
-  <a href="/TWsoftware-FAQ/faq.html#磚牆固定" class="selector-card">
+  </div>
+  <div class="selector-card" onclick="showRecommendation('masonry', this)">
     <span>🧱</span>
     <h4>磚牆固定</h4>
     <p style="font-size: 0.8em; color: #888;">適用於空心磚與輕質隔間牆</p>
-  </a>
-  <a href="/TWsoftware-FAQ/faq.html#預埋系統" class="selector-card">
+  </div>
+  <div class="selector-card" onclick="showRecommendation('channel', this)">
     <span>📐</span>
     <h4>預埋槽系統</h4>
     <p style="font-size: 0.8em; color: #888;">Anchor Channel 預先埋設設計</p>
-  </a>
-  <a href="/TWsoftware-FAQ/faq.html#機械化學比較" class="selector-card" style="border-color: #fdf2f3; background: #fdf2f3;">
+  </div>
+  <div class="selector-card" onclick="showRecommendation('compare', this)">
     <span>⚡</span>
-    <h4 style="color: #D21F3C;">機械 / 化學錨栓</h4>
-    <p style="font-size: 0.8em; color: #D21F3C;">原理差異、選型考量與 Nb 值判斷</p>
-  </a>
+    <h4 style="color: #D21F3C; margin: 10px 0;">機械 / 化學錨栓</h4>
+    <p style="font-size: 0.8em; color: #D21F3C;">原理差異、選型與 Nb 值判定</p>
+  </div>
+</div>
+
+<div id="recommendation-result" class="recommendation-box" markdown="0">
+  <h3 id="rec-title" style="color: #D21F3C; margin-top: 0;"></h3>
+  <p id="rec-desc" style="color: #555; font-size: 1.05em;"></p>
+  <ul id="rec-features" style="color: #555; font-size: 0.95em; line-height: 1.8;"></ul>
+  <a href="https://profisengineering.hilti.com/" target="_blank" class="profis-btn">前往 PROFIS Engineering 開始設計 ➔</a>
 </div>
 
 <h2 style="text-align: center; color: #333; margin-top: 60px;">📊 核心技術數據：三大規範動態對照</h2>
@@ -170,7 +183,55 @@ title: MOTW 技術支援中心
 </p>
 
 <script>
-  // 表格與雷達圖邏輯保持不變...
+  // ================= 互動選型工具邏輯 =================
+  const recData = {
+    'concrete': {
+      title: '推薦方案：HST3-R 機械錨栓 / HIT-RE 500 V3 化學植筋',
+      desc: '符合台灣 401-112 新規範要求，適用於開裂混凝土與抗震設計。',
+      features: ['✅ 具備 C1 / C2 抗震認證，安全有保障', '✅ 支援極小邊距與間距設計', '✅ 可承受動態與地震循環載重']
+    },
+    'masonry': {
+      title: '推薦方案：HIT-HY 270 輕質磚牆專用植筋劑',
+      desc: '針對多孔隙與中空基材設計，確保錨固力不流失。',
+      features: ['✅ 搭配專用網套管使用，完美適用於空心磚', '✅ 不會對基材產生膨脹應力，避免牆面破裂', '✅ 適用於老舊建築翻修與外牆拉皮工程']
+    },
+    'channel': {
+      title: '推薦方案：HAC-V 預埋槽系統 (Anchor Channel)',
+      desc: '免鑽孔的先進錨固技術，提升現場施工效率與精準度。',
+      features: ['✅ 適用於玻璃帷幕、電梯導軌安裝', '✅ 支援 3D 全方位受力調整，容錯率高', '✅ 大幅降低現場粉塵與噪音污染']
+    },
+    'compare': {
+      title: '設計指南：機械錨栓 vs 化學錨栓 (Nb 值判定)',
+      desc: '根據基材破壞模式 (Nb值) 與現場施工條件進行最佳化選擇。',
+      features: ['⚙️ <b>機械錨栓：</b> 施工快速，立即受力，但對邊距與間距要求較嚴格。', '🧪 <b>化學錨栓：</b> 無膨脹應力，適合小邊距，但需注意固化時間與清孔品質。', '💡 建議使用 PROFIS 軟體直接模擬兩種方案在極限狀態下的受力表現。']
+    }
+  };
+
+  function showRecommendation(type, element) {
+    // 移除所有卡片的 active 狀態
+    const cards = document.querySelectorAll('.selector-card');
+    cards.forEach(card => card.classList.remove('active'));
+    // 加上當前卡片的 active 狀態
+    element.classList.add('active');
+
+    // 填入對應資料
+    document.getElementById('rec-title').innerHTML = recData[type].title;
+    document.getElementById('rec-desc').innerHTML = recData[type].desc;
+    
+    const ul = document.getElementById('rec-features');
+    ul.innerHTML = '';
+    recData[type].features.forEach(feat => {
+      const li = document.createElement('li');
+      li.innerHTML = feat;
+      li.style.marginBottom = '8px';
+      ul.appendChild(li);
+    });
+
+    // 顯示結果區塊
+    document.getElementById('recommendation-result').style.display = 'block';
+  }
+
+  // ================= 表格與雷達圖邏輯 =================
   const riskSlider = document.getElementById('riskSlider');
   const riskText = document.getElementById('riskText');
   const tableBody = document.getElementById('tableBody');
