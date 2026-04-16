@@ -68,13 +68,13 @@ title: MOTW PROFIS Engineering FAQ
 <summary>Q: 請問PROFIS Engineering要如何利用Excel輸入多重載重組合？</summary>
 <div class="answer-content">
 1. 先由結構軟體分析載重組合並複製。<br>
-  
+<img src="./images/image 11.png"><br>
 2. 在 PE 中點選「導入荷載」並貼上：<br>
-
+<img src="./images/image 12.png"><br>
 3. 調整軸向與單位（拉力為正，壓力為負）：<br>
-
+<img src="./images/image 14.png"><br>
 4. 點擊應用（一次最多支援 1000 種組合）：<br>
-
+<img src="./images/image 16.png"><br>
 </div>
 </details>
 
