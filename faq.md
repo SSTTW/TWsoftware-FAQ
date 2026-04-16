@@ -94,6 +94,7 @@ title: MOTW PROFIS Engineering FAQ
   <ul style="margin-bottom:0; color:#555; padding-left:20px;">
     <li><a href="./土木401%20112.pdf" target="_blank">🇹🇼 台灣土木 401-112 (113/1/1 生效)</a></li>
     <li><a href="./ACI318%2019.pdf" target="_blank">🇺🇸 美國 ACI 318-19 規範</a></li>
+    <li><a href="https://www.eota.eu/en-gb/content/eads/56/" target="_blank">🇪🇺 EOTA / EAD 歐洲技術評估準則 (EADs)</a></li>
   </ul>
 </div>
 
