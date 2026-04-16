@@ -80,7 +80,7 @@ title: MOTW PROFIS Engineering FAQ
 <details>
 <summary>Q: 建好模型後如何更改檔名？</summary>
 <div class="answer-content">
-點選螢幕上方檔名旁邊的「設定圖示」即可重新編輯專案名稱：<br><img src="./images/image%209.png">
+點選螢幕上方檔名旁邊的「設定圖示」即可重新編輯專案名稱：<br><img src="./images/image9.png">
 </div>
 </details>
 
