@@ -137,12 +137,6 @@ function runSelection() {
 }
 </script>
 
-  <div class="hero-buttons">
-    <a href="/TWsoftware-FAQ/faq.html" style="display: inline-block; padding: 12px 30px; background: #ffffff; color: #D21F3C; border: 2px solid #D21F3C; border-radius: 50px; font-weight: bold;">📚 進入 FAQ 知識庫</a>
-    <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="display: inline-block; padding: 12px 30px; background: #eee; color: #333; border-radius: 50px; font-weight: bold;">💬 Hilti技術諮詢</a>
-  </div>
-</div>
-
 <h2 style="text-align: center; color: #333; margin-top: 40px;">📂 快速分類指南</h2>
 
 <style>
