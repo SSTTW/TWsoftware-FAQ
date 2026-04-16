@@ -48,91 +48,101 @@ title: MOTW PROFIS Engineering FAQ
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ 
 
-<div style="text-align: center; margin: 30px 0; position: relative;">
-  本技術庫整合了軟體操作、力學原理及最新規範
+
+<div style="text-align: center; margin: 30px 0; position: relative; font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;">
+  <p style="margin-bottom: 15px; color: #555;">本技術庫整合了軟體操作、力學原理及最新規範</p>
+  
   <div style="margin-top: 10px;">
-    <form id="search-form" onsubmit="return false;" autocomplete="off">
+    <form id="search-form" onsubmit="return false;" autocomplete="off" style="margin: 0;">
       <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章 (例如：ACI 318, 植筋)..." 
-        style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: border 0.3s;">
     </form>
   </div>
+
   <ul id="results-container" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 5px auto; background: white; border-radius: 12px; position: absolute; left: 0; right: 0; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: none; overflow: hidden; border: 1px solid #eee;">
   </ul>
 </div>
 
 <script>
-// --- 1. 搜尋資料庫：請在這裡增加或修改你的文章關鍵字 ---
-const searchData = [
-  { title: "混凝土固定 - RC結構與梁柱連接", url: "/TWsoftware-FAQ/faq.html#混凝土固定" },
-  { title: "玻璃欄杆 - 底座固定與護欄設計", url: "/TWsoftware-FAQ/faq.html#玻璃欄杆" },
-  { title: "預埋槽系統 - Anchor Channel 預埋", url: "/TWsoftware-FAQ/faq.html#預埋系統" },
-  { title: "錨栓原理比較 - 機械 vs 化學選型", url: "/TWsoftware-FAQ/faq.html#機械化學比較" },
-  { title: "ACI 318 規範解讀", url: "/blog/aci318-guide.html" },
-  { title: "植筋施工注意事項", url: "/blog/rebar-installation.html" },
-  { title: "PROFIS Engineering 軟體操作教學", url: "/blog/profis-tutorial.html" }
+// --- 混合式資料庫 ---
+// 1. 手動定義的 FAQ 錨點 (因為錨點無法自動抓取，建議保留這幾個重點)
+const faqData = [
+  { title: "【FAQ】混凝土固定 - RC結構與梁柱連接", url: "{{ '/faq.html#混凝土固定' | relative_url }}" },
+  { title: "【FAQ】玻璃欄杆 - 底座固定與護欄設計", url: "{{ '/faq.html#玻璃欄杆' | relative_url }}" },
+  { title: "【FAQ】預埋槽系統 - Anchor Channel 預埋", url: "{{ '/faq.html#預埋系統' | relative_url }}" },
+  { title: "【FAQ】錨栓原理比較 - 機械 vs 化學選型", url: "{{ '/faq.html#機械化學比較' | relative_url }}" }
 ];
+
+// 2. 自動抓取的 Blog 文章
+const blogData = [
+  {% for post in site.posts %}
+    { 
+      title: {{ post.title | jsonify }}, 
+      url: {{ post.url | relative_url | jsonify }} 
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+];
+
+// 合併兩者
+const searchData = [...faqData, ...blogData];
 
 const searchInput = document.getElementById('search-input');
 const resultsContainer = document.getElementById('results-container');
 
-// --- 2. 監聽輸入動作 ---
 searchInput.addEventListener('input', function() {
   const query = this.value.trim().toLowerCase();
-  resultsContainer.innerHTML = ''; // 清空舊結果
+  resultsContainer.innerHTML = ''; 
 
   if (query.length === 0) {
     resultsContainer.style.display = 'none';
     return;
   }
 
-  // 過濾資料
-  const filtered = searchData.filter(item => 
-    item.title.toLowerCase().includes(query)
-  );
+  const filtered = searchData.filter(item => item.title.toLowerCase().includes(query));
 
   if (filtered.length > 0) {
-    // 顯示匹配的文章
     filtered.forEach(item => {
       const li = document.createElement('li');
       li.style.padding = '12px 20px';
       li.style.cursor = 'pointer';
       li.style.borderBottom = '1px solid #f9f9f9';
-      li.innerHTML = `<strong>${item.title}</strong>`;
+      // 區分 FAQ 跟 Blog 的顏色或標記
+      const isFaq = item.title.includes('【FAQ】');
+      li.innerHTML = `
+        <div style="color: ${isFaq ? '#e91e63' : '#333'}; font-weight: 500;">
+          ${isFaq ? '📂 ' : '📝 '}${item.title}
+        </div>
+      `;
+      
       li.onmouseover = () => li.style.backgroundColor = '#fff5f6';
       li.onmouseout = () => li.style.backgroundColor = 'transparent';
       li.onclick = () => window.location.href = item.url;
       resultsContainer.appendChild(li);
     });
   } else {
-    // 查無資料的顯示
     const li = document.createElement('li');
-    li.style.padding = '15px 20px';
-    li.style.color = '#666';
+    li.style.padding = '20px';
     li.innerHTML = `
-      <div style="font-weight: bold; color: #d9534f; margin-bottom: 5px;">❌ 找不到您搜尋的內容</div>
-      <div style="font-size: 0.9em;">請使用以下修正搜尋：<br>
-        <span style="color: #007bff; cursor: pointer;" onclick="quickSearch('ACI')">#ACI</span>, 
-        <span style="color: #007bff; cursor: pointer;" onclick="quickSearch('錨栓')">#錨栓</span>, 
-        <span style="color: #007bff; cursor: pointer;" onclick="quickSearch('PROFIS')">#PROFIS</span>
+      <div style="color: #d9534f; font-weight: bold; margin-bottom: 8px;">❌ 找不到您搜尋的內容</div>
+      <div style="font-size: 0.9em; color: #666;">請使用以下修正搜尋：<br><br>
+        <span style="color: #007bff; cursor: pointer; text-decoration: underline; margin-right: 10px;" onclick="quickSearch('ACI')">#ACI</span>
+        <span style="color: #007bff; cursor: pointer; text-decoration: underline; margin-right: 10px;" onclick="quickSearch('錨栓')">#錨栓</span>
+        <span style="color: #007bff; cursor: pointer; text-decoration: underline;" onclick="quickSearch('PROFIS')">#PROFIS</span>
       </div>
     `;
     resultsContainer.appendChild(li);
   }
-
   resultsContainer.style.display = 'block';
 });
 
-// 快速修正點擊功能
 function quickSearch(word) {
   searchInput.value = word;
   searchInput.dispatchEvent(new Event('input'));
+  searchInput.focus();
 }
 
-// 點擊頁面其他地方關閉下拉選單
-document.addEventListener('click', function(e) {
-  if (e.target !== searchInput) {
-    resultsContainer.style.display = 'none';
-  }
+document.addEventListener('click', (e) => {
+  if (e.target !== searchInput) resultsContainer.style.display = 'none';
 });
 </script>
 
