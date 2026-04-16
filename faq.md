@@ -48,10 +48,8 @@ title: MOTW PROFIS Engineering FAQ
 
 # 🏗️ MOTW PROFIS ENGINEERING FAQ 
 
-本技術庫整合了軟體操作、力學原理及最新規範。點擊下方分類快速查看。
-
 <div style="text-align: center; margin: 30px 0; position: relative;">
-  <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+本技術庫整合了軟體操作、力學原理及最新規範  <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   <ul id="results-container" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 10px auto; background: white; border-radius: 12px; position: absolute; left: 0; right: 0; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></ul>
 </div>
 
