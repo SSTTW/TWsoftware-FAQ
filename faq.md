@@ -135,7 +135,7 @@ title: MOTW PROFIS Engineering FAQ
 2. **Nb 值 (混凝土錐狀破壞)**：現場測試時，通常化學錨栓的抗拔力上限受限於鋼材強度，而機械錨栓則較早發生混凝土破壞。<br>
 3. **地震區建議**：高地震區建議優先考慮具備 C2 認證的化學錨栓（如 HIT-RE 500 V3），其對於較寬的裂縫有更佳的位移耐受度。
 <br>
-![Nb 值參考](./images/image.png)
+![Nb 值參考]<img src="./images/image.png"><br>
 </div>
 </details>
 
