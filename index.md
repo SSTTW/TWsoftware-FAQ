@@ -59,8 +59,8 @@ title: MOTW 技術支援中心
       <div class="control-group">
         <label>環境條件</label>
         <select id="sel-env">
-          <option value="indoor">乾燥一般環境 (Zinc)</option>
-          <option value="outdoor">潮濕/腐蝕環境 (SS/A4)</option>
+          <option value="indoor">乾燥一般環境 </option>
+          <option value="outdoor">潮濕/腐蝕環境 </option>
         </select>
       </div>
       <div class="control-group">
@@ -68,7 +68,6 @@ title: MOTW 技術支援中心
         <select id="sel-type">
           <option value="mechanical">機械式錨栓</option>
           <option value="chemical">化學藥劑系統</option>
-          <option value="screw">螺紋式水泥螺釘</option>
         </select>
       </div>
     </div>
