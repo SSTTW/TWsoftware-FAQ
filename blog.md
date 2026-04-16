@@ -39,9 +39,30 @@ title: MOTW 技術專欄
 這裡收錄了 PROFIS Engineering 軟體的進階應用指南與 Hilti 解決方案的技術解析，協助工程師掌握最先進的設計邏輯。
 
 <div style="text-align: center; margin: 30px 0; position: relative;">
-  <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+  本技術庫整合了軟體操作、力學原理及最新規範
+  <div style="margin-top: 10px;">
+    <form id="search-form" onsubmit="return handleSearch(event)">
+      <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章 (例如：ACI 318, 植筋)..." 
+        style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </form>
+  </div>
   <ul id="results-container" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 10px auto; background: white; border-radius: 12px; position: absolute; left: 0; right: 0; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></ul>
 </div>
+
+<script>
+function handleSearch(event) {
+  event.preventDefault(); // 防止頁面刷新
+  const query = document.getElementById('search-input').value;
+  if (query.trim() !== "") {
+    // 這裡使用 Google 站內搜尋技術，會自動搜尋你指定的網址
+    // 請將 site: 後面的網址換成你 FAQ 實際的網域 (例如: hilti.com.tw 或 github.io)
+    const siteDomain = window.location.hostname; 
+    const searchUrl = `https://www.google.com/search?q=site:${siteDomain}+${encodeURIComponent(query)}`;
+    window.open(searchUrl, '_blank'); // 在新視窗打開搜尋結果
+  }
+  return false;
+}
+</script>
 
 <div class="blog-grid">
   {% for post in site.posts %}
