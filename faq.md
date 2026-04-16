@@ -135,7 +135,7 @@ title: MOTW PROFIS Engineering FAQ
 2. **Nb 值 (混凝土錐狀破壞)**：現場測試時，通常化學錨栓的抗拔力上限受限於鋼材強度，而機械錨栓則較早發生混凝土破壞。<br>
 3. **地震區建議**：高地震區建議優先考慮具備 C2 認證的化學錨栓（如 HIT-RE 500 V3），其對於較寬的裂縫有更佳的位移耐受度。
 <br>
-![Nb 值參考]<img src="./images/image.png"><br>
+<img src="./images/image.png"><br>
 </div>
 </details>
 
@@ -143,6 +143,13 @@ title: MOTW PROFIS Engineering FAQ
 <summary>Q: 如何手動輸入 1.5d 以下的邊距係數？</summary>
 <div class="answer-content">
 雖然 AISI S100 建議邊距不得小於 1.5d，但在 PE 軟體中，設計者可根據實際工程補強狀況，手動在參數欄位調整數值。若數值過低，軟體會顯示紅字警示，此時須檢核是否增加鋼板厚度或進行邊緣補強。
+</div>
+</details>
+
+<details>
+<summary>Q: 錨栓耐震設計需求-荷載類型 規範章節（17.10）如何辨識？ </summary>
+<div class="answer-content">
+<img src="./images/image 33.png"><br>
 </div>
 </details>
 
