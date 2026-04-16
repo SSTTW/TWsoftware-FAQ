@@ -1,9 +1,36 @@
-theme: minima
-title: MOTW PROFIS Engineering FAQ
+# 網站基本資訊
+title: MOTW PROFIS Engineering 技術支援中心
+email: support@example.com # 可改為你的聯絡信箱
+description: >- 
+  針對 PROFIS Engineering 軟體操作、力學原理及最新規範的技術支援與 FAQ 資料庫。
+
+# 重要的路徑設定 (確保 GitHub Pages 連結正確)
+baseurl: "/TWsoftware-FAQ" # 你的 GitHub 專案名稱，開頭必須有斜線
+url: "https://SSTTW.github.io" # 你的 GitHub 帳號名稱
+
+# 導覽列設定 (會顯示在頁面右上角)
 header_pages:
   - index.md
+  - faq.md
+  - blog.md
 
-# 自定義簡約風格設定
+# 主題與外觀
+theme: minima
 minima:
-  skin: classic # 使用經典白底黑字
+  skin: classic # 保持簡約白底，符合專業工程風格
+  social_links:
+    - { platform: github, user: SSTTW }
+
+# 效能與外掛
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag # 增加 Google 搜尋優化
+
+# 排除不需要轉檔的檔案
+exclude:
+  - README.md
+  - .github/
+  - Gemfile
+  - Gemfile.lock
+
 future: true
