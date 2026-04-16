@@ -49,7 +49,7 @@ title: MOTW PROFIS Engineering FAQ
 # 🏗️ MOTW PROFIS ENGINEERING FAQ 
 
 <div style="text-align: center; margin: 30px 0; position: relative;">
-本技術庫整合了軟體操作、力學原理及最新規範  <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+本技術庫整合了軟體操作、力學原理及最新規範       <input type="text" id="search-input" placeholder="🔍 輸入關鍵字搜尋文章或手冊 (例如：ACI 318, 植筋)..." style="padding: 12px 20px; width: 100%; max-width: 500px; box-sizing: border-box; border-radius: 50px; border: 2px solid #fee2e5; font-size: 16px; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   <ul id="results-container" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 10px auto; background: white; border-radius: 12px; position: absolute; left: 0; right: 0; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></ul>
 </div>
 
@@ -61,7 +61,6 @@ title: MOTW PROFIS Engineering FAQ
 * [📐 結構設計與力學分析](#結構設計與力學分析)
 * [🏗️ 預埋槽 (Anchor Channel) 專區](#預埋系統)
 * [⚡ 機械與化學錨栓選型考量](#機械化學比較)
-* [🧱 磚牆固定 (Masonry) 專區](#磚牆固定)
 
 ---
 
