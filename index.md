@@ -31,24 +31,8 @@ title: MOTW 技術支援中心
   .selector-card { background: #fff; border: 2px solid #eee; border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s; }
   .selector-card:hover { border-color: #D21F3C; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210,31,60,0.1); }
 
-  /* 圖表與數據區塊 */
-  .charts-flex-container { display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0; width: 100%; box-sizing: border-box; }
-  .chart-box { flex: 1; min-width: 320px; background: #fafafa; border: 1px solid #eee; border-radius: 15px; padding: 20px; box-sizing: border-box; }
-  .risk-label { font-size: 1.1em; font-weight: bold; color: #D21F3C; text-align: center; margin: 10px 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 10px; background: #fff; }
-  th { background-color: #D21F3C; color: white; padding: 8px; border: 1px solid #ddd; }
-  td { padding: 8px; border: 1px solid #ddd; text-align: center; }
-  .radar-canvas-wrapper { height: 300px; position: relative; width: 100%; }
-
-  /* FAQ 與資源導航 */
-  .faq-highlight-container { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; padding: 40px; background: #fdf2f3; border-radius: 20px; margin: 60px 0; }
-  .faq-image { flex: 1; min-width: 280px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-  .faq-image img { width: 100%; display: block; }
-  .info-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-  .info-card { flex: 1; min-width: 250px; padding: 25px; border: 1px solid #eee; border-radius: 12px; background: #fff; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; }
-  .info-card:hover { border-color: #D21F3C; transform: translateY(-3px); }
-
-  @media (max-width: 768px) { .chart-box { min-width: 100%; } .faq-highlight-container { padding: 25px !important; } }
+  /* 調整選型顯示內的標籤 */
+  .badge { display: inline-block; padding: 2px 8px; background: #D21F3C; color: #fff; font-size: 0.75em; border-radius: 4px; margin-right: 5px; vertical-align: middle; }
 </style>
 
 <div class="hero-section" markdown="0">
@@ -62,7 +46,7 @@ title: MOTW 技術支援中心
         <label>地震風險</label>
         <select id="sel-seismic">
           <option value="low">低地震 (Static)</option>
-          <option value="high">高地震 C2</option>
+          <option value="high">高地震 C2 (Seismic)</option>
         </select>
       </div>
       <div class="control-group">
@@ -75,25 +59,84 @@ title: MOTW 技術支援中心
       <div class="control-group">
         <label>環境條件</label>
         <select id="sel-env">
-          <option value="indoor">乾燥一般環境</option>
-          <option value="outdoor">潮濕特殊環境</option>
+          <option value="indoor">乾燥一般環境 (Zinc)</option>
+          <option value="outdoor">潮濕/腐蝕環境 (SS/A4)</option>
         </select>
       </div>
       <div class="control-group">
         <label>優先偏好</label>
         <select id="sel-type">
-          <option value="mechanical">機械錨栓</option>
-          <option value="chemical">化學藥劑</option>
+          <option value="mechanical">機械式錨栓</option>
+          <option value="chemical">化學藥劑系統</option>
+          <option value="screw">螺紋式水泥螺釘</option>
         </select>
       </div>
     </div>
     <button onclick="runSelection()" style="width:100%; padding:12px; background:#333; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">🔍 獲取初步推薦結果</button>
+    
     <div id="selection-result" class="result-display">
-      <div style="font-weight:bold; font-size:1.1em; color:#D21F3C;" id="res-product">推薦產品：載入中...</div>
+      <div id="res-product" style="font-weight:bold; font-size:1.1em; color:#D21F3C;"></div>
       <p id="res-note" style="font-size:0.9em; margin:10px 0; color:#555;"></p>
+      <div id="res-tags" style="margin-top: 10px;"></div>
       <a href="https://profisengineering.hilti.com/" target="_blank" class="profis-link-btn">前往 PROFIS 進行完整力學驗算 ➔</a>
     </div>
   </div>
+
+  <div class="hero-buttons">
+    <a href="/TWsoftware-FAQ/faq.html" style="display: inline-block; padding: 12px 30px; background: #ffffff; color: #D21F3C; border: 2px solid #D21F3C; border-radius: 50px; font-weight: bold;">📚 進入 FAQ 知識庫</a>
+    <a href="https://forms.office.com/e/PngwicwAn8" target="_blank" style="display: inline-block; padding: 12px 30px; background: #eee; color: #333; border-radius: 50px; font-weight: bold;">💬 Hilti 技術諮詢</a>
+  </div>
+</div>
+
+<script>
+function runSelection() {
+  const seismic = document.getElementById('sel-seismic').value;
+  const concrete = document.getElementById('sel-concrete').value;
+  const env = document.getElementById('sel-env').value;
+  const type = document.getElementById('sel-type').value;
+  
+  let product = "";
+  let note = "";
+  let tags = [];
+
+  // 擴充後的選型邏輯
+  if (type === 'chemical') {
+    if (seismic === 'high' || concrete === 'cracked') {
+      product = "HIT-RE 500 V4 (環氧樹脂) 或 HIT-HY 200-R V3";
+      note = "針對開裂混凝土與高震區設計，具備頂級承載力。搭配 HIT-Z 錨桿可實現 SafeSet 免清孔技術。";
+      tags = ["ETA C2 抗震", "SafeSet", "植筋首選"];
+    } else {
+      product = "HIT-RE 100 或 HIT-HY 100";
+      note = "適合非開裂混凝土與一般靜態載重環境，具備高度經濟效益。";
+      tags = ["經濟型", "一般環境"];
+    }
+  } else if (type === 'mechanical') {
+    if (seismic === 'high' || concrete === 'cracked') {
+      product = env === 'outdoor' ? "HST3-R (不鏽鋼 A4)" : "HST3 (碳鋼電鍍鋅)";
+      note = "具備最高等級的開裂混凝土性能。不鏽鋼版本(R)適用於潮濕或戶外腐蝕環境。";
+      tags = ["ETA C2 抗震", "高端結構", "高抗拔"];
+    } else {
+      product = "HSA 楔型膨脹錨栓";
+      note = "適合室內乾燥環境及非開裂混凝土的標準安裝。";
+      tags = ["標準安裝", "快速施工"];
+    }
+  } else if (type === 'screw') {
+    product = env === 'outdoor' ? "HUS4-H (SS316/不鏽鋼)" : "HUS4 / HUS3 水泥螺釘";
+    note = "完全移除膨脹應力，適合邊距較小的安裝。HUS4 可重新調整水平，極適合欄杆與機電支架。";
+    tags = ["可調整", "零膨脹應力", "快速拆裝"];
+  }
+
+  // 渲染結果
+  const resultDiv = document.getElementById('selection-result');
+  document.getElementById('res-product').innerText = "核心推薦：" + product;
+  document.getElementById('res-note').innerText = note;
+  
+  const tagsHtml = tags.map(t => `<span class="badge">${t}</span>`).join('');
+  document.getElementById('res-tags').innerHTML = tagsHtml;
+  
+  resultDiv.style.display = 'block';
+}
+</script>
 
   <div class="hero-buttons">
     <a href="/TWsoftware-FAQ/faq.html" style="display: inline-block; padding: 12px 30px; background: #ffffff; color: #D21F3C; border: 2px solid #D21F3C; border-radius: 50px; font-weight: bold;">📚 進入 FAQ 知識庫</a>
