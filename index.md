@@ -26,7 +26,7 @@ title: MOTW 技術支援中心
   @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   .profis-link-btn { display: inline-block; background: #D21F3C; color: white !important; padding: 12px 25px; border-radius: 50px; font-weight: bold; margin-top: 15px; }
 
-  /* 快速選型卡片 (Icon式) */
+  /* 快速選型卡片 */
   .selector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 30px 0; }
   .selector-card { background: #fff; border: 2px solid #eee; border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s; }
   .selector-card:hover { border-color: #D21F3C; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210,31,60,0.1); }
@@ -60,19 +60,31 @@ title: MOTW 技術支援中心
     <div class="selector-controls">
       <div class="control-group">
         <label>地震風險</label>
-        <select id="sel-seismic"><option value="low">低地震 (Static)</option><option value="high">高地震C2 </option></select>
+        <select id="sel-seismic">
+          <option value="low">低地震 (Static)</option>
+          <option value="high">高地震 C2</option>
+        </select>
       </div>
       <div class="control-group">
         <label>混凝土狀態</label>
-        <select id="sel-concrete"><option value="non-cracked">非開裂混凝土 </option><option value="cracked">開裂混凝土 </option></select>
+        <select id="sel-concrete">
+          <option value="non-cracked">非開裂混凝土</option>
+          <option value="cracked">開裂混凝土</option>
+        </select>
       </div>
       <div class="control-group">
         <label>環境條件</label>
-        <select id="sel-env"><option value="indoor">乾燥一般環境</option><option value="outdoor">潮濕特殊環境</option></select>
+        <select id="sel-env">
+          <option value="indoor">乾燥一般環境</option>
+          <option value="outdoor">潮濕特殊環境</option>
+        </select>
       </div>
       <div class="control-group">
         <label>優先偏好</label>
-        <select id="sel-type"><option value="mechanical">機械錨栓</option><option value="chemical">化學藥劑 </option></select>
+        <select id="sel-type">
+          <option value="mechanical">機械錨栓</option>
+          <option value="chemical">化學藥劑</option>
+        </select>
       </div>
     </div>
     <button onclick="runSelection()" style="width:100%; padding:12px; background:#333; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">🔍 獲取初步推薦結果</button>
@@ -119,7 +131,7 @@ title: MOTW 技術支援中心
 <div class="faq-highlight-container" markdown="0">
   <div class="faq-image"><img src="/TWsoftware-FAQ/images/faq_preview.png" alt="FAQ Preview"></div>
   <div class="faq-text">
-    <h2 style="color:#D21F3C; margin-top:0;"> 技術問題 快速排除</h2>
+    <h2 style="color:#D21F3C; margin-top:0;">技術問題 快速排除</h2>
     <p style="color:#555;">針對軟體使用、參數設定、法規解釋疑義，我們彙整了完整的 FAQ 資料庫，提供參考。</p>
     <a href="/TWsoftware-FAQ/faq.html" style="display:inline-block; padding:12px 30px; background:#D21F3C; color:white; border-radius:8px; font-weight:bold;">查看完整 FAQ</a>
   </div>
@@ -145,12 +157,27 @@ title: MOTW 技術支援中心
     let product = "", note = "";
 
     if (seismic === "high") {
-      if (type === "chemical") { product = "HIT-RE 500 V3"; note = "高地震區首選化學植筋，具備 C2 抗震認證。"; }
-      else { product = "HST4 / HSL4"; note = "最新機械錨栓，針對開裂混凝土與抗震設計。"; }
+      if (type === "chemical") { 
+        product = "HIT-RE 500 V3"; 
+        note = "高地震區首選化學植筋，具備 C2 抗震認證，極佳的抗裂縫位移能力。"; 
+      }
+      else { 
+        product = "HST4 / HSL4"; 
+        note = "最新一代機械錨栓，針對開裂混凝土與 C2 抗震設計，安裝即受力。"; 
+      }
     } else {
-      if (env === "outdoor") { product = "HIT-RE 500 V3 (A4)"; note = "潮濕特殊環境建議使用化學植筋搭配不鏽鋼。"; }
-      else if (type === "mechanical") { product = "HUS4 / HST4"; note = "乾燥一般環境機械錨栓效率最高。"; }
-      else { product = "HVU2"; note = "乾燥一般化學植筋首選，固化速度快。"; }
+      if (env === "outdoor") { 
+        product = "HIT-RE 500 V3 (A4 不鏽鋼)"; 
+        note = "潮濕或戶外特殊環境建議選用化學植筋搭配不鏽鋼件以確保長期防蝕壽命。"; 
+      }
+      else if (type === "mechanical") { 
+        product = "HUS4 / HST4"; 
+        note = "乾燥一般環境下機械錨栓具備極高施工效率，且受環境溫度影響較小。"; 
+      }
+      else { 
+        product = "HVU2 (膠囊型化學錨栓)"; 
+        note = "乾燥一般環境化學植筋首選，固化速度快，搭配 SafeSet 技術可免清孔。"; 
+      }
     }
     document.getElementById('res-product').innerText = "推薦產品：" + product;
     document.getElementById('res-note').innerText = note;
@@ -174,19 +201,24 @@ title: MOTW 技術支援中心
     }
     document.getElementById('tableBody').innerHTML = html;
   }
-  riskSlider.addEventListener('input', e => updateTable(e.target.value));
-  updateTable(1);
+  if(riskSlider) {
+    riskSlider.addEventListener('input', e => updateTable(e.target.value));
+    updateTable(1);
+  }
 
-  new Chart(document.getElementById('radarChart'), {
-    type: 'radar',
-    data: {
-      labels: ['抗震嚴格度', '計算複雜度', '認證門檻', '更新頻率'],
-      datasets: [
-        { label: '🇹🇼 TW', data: [90, 75, 85, 70], backgroundColor: 'rgba(210,31,60,0.2)', borderColor: '#D21F3C' },
-        { label: '🇺🇸 US', data: [85, 80, 80, 90], backgroundColor: 'rgba(54,162,235,0.2)', borderColor: '#36A2EB' },
-        { label: '🇪🇺 EU', data: [80, 95, 95, 85], backgroundColor: 'rgba(255,206,86,0.2)', borderColor: '#FFCE56' }
-      ]
-    },
-    options: { maintainAspectRatio: false, scales: { r: { min: 40, max: 100, ticks: { display: false } } } }
-  });
+  const radarCtx = document.getElementById('radarChart');
+  if(radarCtx) {
+    new Chart(radarCtx, {
+      type: 'radar',
+      data: {
+        labels: ['抗震嚴格度', '計算複雜度', '認證門檻', '更新頻率'],
+        datasets: [
+          { label: '🇹🇼 TW', data: [90, 75, 85, 70], backgroundColor: 'rgba(210,31,60,0.2)', borderColor: '#D21F3C' },
+          { label: '🇺🇸 US', data: [85, 80, 80, 90], backgroundColor: 'rgba(54,162,235,0.2)', borderColor: '#36A2EB' },
+          { label: '🇪🇺 EU', data: [80, 95, 95, 85], backgroundColor: 'rgba(255,206,86,0.2)', borderColor: '#FFCE56' }
+        ]
+      },
+      options: { maintainAspectRatio: false, scales: { r: { min: 40, max: 100, ticks: { display: false } } } }
+    });
+  }
 </script>
