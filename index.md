@@ -197,7 +197,7 @@ title: MOTW 技術支援中心
       }
     } else if (type === 'mechanical') {
       if (seismic === 'high' || concrete === 'cracked') {
-        product = env === 'outdoor' ? "HST3-R (不鏽鋼 A4)" : "HST3 / HST4 (高效能碳鋼)";
+        product = env === 'outdoor' ? "HST4-R (不鏽鋼 A4)" : "HST4 (高效能碳鋼)";
         note = "具備最高等級的開裂混凝土性能。最新 HST4 系列進一步優化了極距與承載力。";
         tags = ["ETA C2 抗震", "高端結構", "高抗拔"];
       } else {
