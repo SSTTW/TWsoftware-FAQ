@@ -187,7 +187,7 @@ title: MOTW 技術支援中心
 
     if (type === 'chemical') {
       if (seismic === 'high' || concrete === 'cracked') {
-        product = "HIT-RE 500 V4 (環氧樹脂) 或 HIT-HY 200-R V3";
+        product = "HIT-RE 500 V3 (環氧樹脂) 或 HIT-HY 200-R";
         note = "針對開裂混凝土與高震區設計，具備頂級承載力。搭配 HIT-Z 錨桿可實現 SafeSet 免清孔技術。";
         tags = ["ETA C2 抗震", "SafeSet", "植筋首選"];
       } else {
